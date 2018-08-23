@@ -1,0 +1,1 @@
+'C:\Users\cdc75\Desktop\Labs\Lesson5_ Challenge.cydsn\main.c' -o .o -T C_FILE -I 'C:\Users\cdc75\Desktop\Labs\Lesson5_ Challenge.cydsn' -I 'C:\Users\cdc75\Desktop\Labs\Lesson5_ Challenge.cydsn\Generated_Source\PSoC4' -f 'C:\Users\cdc75\Desktop\Labs\Lesson5_ Challenge.cydsn\CortexM0\ARM_GCC_493\Debug\.deps\C_FILE.d'

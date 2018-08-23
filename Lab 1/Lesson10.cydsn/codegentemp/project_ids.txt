@@ -1,0 +1,14 @@
+C:\Users\cdc75\Desktop\Labs\Lesson1.cydsn\Lesson1.cyprj|9b02e940-07bc-4fca-a36a-ab2998543579
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|335e233c-d9a9-42ce-8fc7-f63192313391
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e5bf7977-6c4d-4006-862c-44e5e034fdaf
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|162f65e2-9bad-4435-95a1-2d58e1057cfc
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|81c7333d-9f0c-4a3a-ba8f-a139ce8babd7
+C:\Users\cdc75\Desktop\Labs\Lesson2.cydsn\Lesson2.cyprj|1df4c10b-d334-4d7e-bd16-1840097aeaed
+C:\Users\cdc75\Desktop\Labs\Lesson3.cydsn\Lesson3.cyprj|01f51380-a449-4808-bf89-9e4ac9242729
+C:\Users\cdc75\Desktop\Labs\Lesson4.cydsn\Lesson4.cyprj|f050ea93-b201-4e94-b41a-1e69becb266b
+C:\Users\cdc75\Desktop\Labs\Lesson5.cydsn\Lesson5.cyprj|745f71df-b07f-4419-a8cd-dc9d738e9f34
+C:\Users\cdc75\Desktop\Labs\Lesson6.cydsn\Lesson6.cyprj|a13ef52c-81c2-43d2-b90f-3f221f631ea0
+C:\Users\cdc75\Desktop\Labs\Lesson7.cydsn\Lesson7.cyprj|8213ee4a-372d-4f7a-87a4-f1c149dc3256
+C:\Users\cdc75\Desktop\Labs\Lesson8.cydsn\Lesson8.cyprj|a555a751-4cba-4b82-bbd8-a526b08fc28b
+C:\Users\cdc75\Desktop\Labs\Lesson9.cydsn\Lesson9.cyprj|7ff410c7-9188-4f5b-bd5e-0946462b6b0c
+C:\Users\cdc75\Desktop\Labs\Lesson10.cydsn\Lesson10.cyprj|9261de6b-7b36-4849-be7d-40462ff234af

@@ -1,0 +1,589 @@
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB34:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  16:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  32              		.loc 1 16 0
+  33              	@ 16 ".\main.c" 1
+  34 0002 62B6     		CPSIE   i
+  35              	@ 0 "" 2
+  36              		.code	16
+  37              	.L2:
+  17:.\main.c      **** 
+  18:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  19:.\main.c      **** 
+  20:.\main.c      ****     for(;;)
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 2
+
+
+  21:.\main.c      ****     {
+  22:.\main.c      ****         /* Changing duty cycle to 70% (meaning
+  23:.\main.c      ****         the pin is on longer then off), period is 2 secs */
+  24:.\main.c      ****         
+  25:.\main.c      ****         Pin_Blue_Write( ~ Pin_Blue_Read() );
+  38              		.loc 1 25 0 discriminator 1
+  39 0004 FFF7FEFF 		bl	Pin_Blue_Read
+  40              	.LVL0:
+  41 0008 C043     		mvn	r0, r0
+  42 000a C0B2     		uxtb	r0, r0
+  43 000c FFF7FEFF 		bl	Pin_Blue_Write
+  44              	.LVL1:
+  26:.\main.c      ****         CyDelay( 14 );
+  45              		.loc 1 26 0 discriminator 1
+  46 0010 0E20     		mov	r0, #14
+  47 0012 FFF7FEFF 		bl	CyDelay
+  48              	.LVL2:
+  27:.\main.c      ****         Pin_Blue_Write( ~ Pin_Blue_Read() );
+  49              		.loc 1 27 0 discriminator 1
+  50 0016 FFF7FEFF 		bl	Pin_Blue_Read
+  51              	.LVL3:
+  52 001a C043     		mvn	r0, r0
+  53 001c C0B2     		uxtb	r0, r0
+  54 001e FFF7FEFF 		bl	Pin_Blue_Write
+  55              	.LVL4:
+  28:.\main.c      ****         CyDelay( 6 );
+  56              		.loc 1 28 0 discriminator 1
+  57 0022 0620     		mov	r0, #6
+  58 0024 FFF7FEFF 		bl	CyDelay
+  59              	.LVL5:
+  29:.\main.c      ****     }
+  60              		.loc 1 29 0 discriminator 1
+  61 0028 ECE7     		b	.L2
+  62              		.cfi_endproc
+  63              	.LFE34:
+  64              		.size	main, .-main
+  65 002a C046     		.text
+  66              	.Letext0:
+  67              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  68              		.file 3 "Generated_Source\\PSoC4/Pin_Blue.h"
+  69              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+  70              		.section	.debug_info,"",%progbits
+  71              	.Ldebug_info0:
+  72 0000 25010000 		.4byte	0x125
+  73 0004 0400     		.2byte	0x4
+  74 0006 00000000 		.4byte	.Ldebug_abbrev0
+  75 000a 04       		.byte	0x4
+  76 000b 01       		.uleb128 0x1
+  77 000c FC000000 		.4byte	.LASF15
+  78 0010 01       		.byte	0x1
+  79 0011 98010000 		.4byte	.LASF16
+  80 0015 8F000000 		.4byte	.LASF17
+  81 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  82 001d 00000000 		.4byte	0
+  83 0021 00000000 		.4byte	.Ldebug_line0
+  84 0025 02       		.uleb128 0x2
+  85 0026 01       		.byte	0x1
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 3
+
+
+  86 0027 06       		.byte	0x6
+  87 0028 F0000000 		.4byte	.LASF0
+  88 002c 02       		.uleb128 0x2
+  89 002d 01       		.byte	0x1
+  90 002e 08       		.byte	0x8
+  91 002f 73000000 		.4byte	.LASF1
+  92 0033 02       		.uleb128 0x2
+  93 0034 02       		.byte	0x2
+  94 0035 05       		.byte	0x5
+  95 0036 CC000000 		.4byte	.LASF2
+  96 003a 02       		.uleb128 0x2
+  97 003b 02       		.byte	0x2
+  98 003c 07       		.byte	0x7
+  99 003d DD000000 		.4byte	.LASF3
+ 100 0041 02       		.uleb128 0x2
+ 101 0042 04       		.byte	0x4
+ 102 0043 05       		.byte	0x5
+ 103 0044 86000000 		.4byte	.LASF4
+ 104 0048 02       		.uleb128 0x2
+ 105 0049 04       		.byte	0x4
+ 106 004a 07       		.byte	0x7
+ 107 004b 44000000 		.4byte	.LASF5
+ 108 004f 02       		.uleb128 0x2
+ 109 0050 08       		.byte	0x8
+ 110 0051 05       		.byte	0x5
+ 111 0052 00000000 		.4byte	.LASF6
+ 112 0056 02       		.uleb128 0x2
+ 113 0057 08       		.byte	0x8
+ 114 0058 07       		.byte	0x7
+ 115 0059 56000000 		.4byte	.LASF7
+ 116 005d 03       		.uleb128 0x3
+ 117 005e 04       		.byte	0x4
+ 118 005f 05       		.byte	0x5
+ 119 0060 696E7400 		.ascii	"int\000"
+ 120 0064 02       		.uleb128 0x2
+ 121 0065 04       		.byte	0x4
+ 122 0066 07       		.byte	0x7
+ 123 0067 15000000 		.4byte	.LASF8
+ 124 006b 04       		.uleb128 0x4
+ 125 006c 3E000000 		.4byte	.LASF9
+ 126 0070 02       		.byte	0x2
+ 127 0071 9801     		.2byte	0x198
+ 128 0073 2C000000 		.4byte	0x2c
+ 129 0077 04       		.uleb128 0x4
+ 130 0078 0E000000 		.4byte	.LASF10
+ 131 007c 02       		.byte	0x2
+ 132 007d 9A01     		.2byte	0x19a
+ 133 007f 48000000 		.4byte	0x48
+ 134 0083 02       		.uleb128 0x2
+ 135 0084 04       		.byte	0x4
+ 136 0085 04       		.byte	0x4
+ 137 0086 6D000000 		.4byte	.LASF11
+ 138 008a 02       		.uleb128 0x2
+ 139 008b 08       		.byte	0x8
+ 140 008c 04       		.byte	0x4
+ 141 008d D6000000 		.4byte	.LASF12
+ 142 0091 02       		.uleb128 0x2
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 4
+
+
+ 143 0092 01       		.byte	0x1
+ 144 0093 08       		.byte	0x8
+ 145 0094 81000000 		.4byte	.LASF13
+ 146 0098 02       		.uleb128 0x2
+ 147 0099 04       		.byte	0x4
+ 148 009a 07       		.byte	0x7
+ 149 009b A1010000 		.4byte	.LASF14
+ 150 009f 05       		.uleb128 0x5
+ 151 00a0 31000000 		.4byte	.LASF18
+ 152 00a4 01       		.byte	0x1
+ 153 00a5 0E       		.byte	0xe
+ 154 00a6 5D000000 		.4byte	0x5d
+ 155 00aa 00000000 		.4byte	.LFB34
+ 156 00ae 2A000000 		.4byte	.LFE34-.LFB34
+ 157 00b2 01       		.uleb128 0x1
+ 158 00b3 9C       		.byte	0x9c
+ 159 00b4 FF000000 		.4byte	0xff
+ 160 00b8 06       		.uleb128 0x6
+ 161 00b9 08000000 		.4byte	.LVL0
+ 162 00bd FF000000 		.4byte	0xff
+ 163 00c1 06       		.uleb128 0x6
+ 164 00c2 10000000 		.4byte	.LVL1
+ 165 00c6 0A010000 		.4byte	0x10a
+ 166 00ca 07       		.uleb128 0x7
+ 167 00cb 16000000 		.4byte	.LVL2
+ 168 00cf 1B010000 		.4byte	0x11b
+ 169 00d3 DD000000 		.4byte	0xdd
+ 170 00d7 08       		.uleb128 0x8
+ 171 00d8 01       		.uleb128 0x1
+ 172 00d9 50       		.byte	0x50
+ 173 00da 01       		.uleb128 0x1
+ 174 00db 3E       		.byte	0x3e
+ 175 00dc 00       		.byte	0
+ 176 00dd 06       		.uleb128 0x6
+ 177 00de 1A000000 		.4byte	.LVL3
+ 178 00e2 FF000000 		.4byte	0xff
+ 179 00e6 06       		.uleb128 0x6
+ 180 00e7 22000000 		.4byte	.LVL4
+ 181 00eb 0A010000 		.4byte	0x10a
+ 182 00ef 09       		.uleb128 0x9
+ 183 00f0 28000000 		.4byte	.LVL5
+ 184 00f4 1B010000 		.4byte	0x11b
+ 185 00f8 08       		.uleb128 0x8
+ 186 00f9 01       		.uleb128 0x1
+ 187 00fa 50       		.byte	0x50
+ 188 00fb 01       		.uleb128 0x1
+ 189 00fc 36       		.byte	0x36
+ 190 00fd 00       		.byte	0
+ 191 00fe 00       		.byte	0
+ 192 00ff 0A       		.uleb128 0xa
+ 193 0100 8A010000 		.4byte	.LASF19
+ 194 0104 03       		.byte	0x3
+ 195 0105 32       		.byte	0x32
+ 196 0106 6B000000 		.4byte	0x6b
+ 197 010a 0B       		.uleb128 0xb
+ 198 010b 22000000 		.4byte	.LASF20
+ 199 010f 03       		.byte	0x3
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 5
+
+
+ 200 0110 33       		.byte	0x33
+ 201 0111 1B010000 		.4byte	0x11b
+ 202 0115 0C       		.uleb128 0xc
+ 203 0116 6B000000 		.4byte	0x6b
+ 204 011a 00       		.byte	0
+ 205 011b 0D       		.uleb128 0xd
+ 206 011c 36000000 		.4byte	.LASF21
+ 207 0120 04       		.byte	0x4
+ 208 0121 D7       		.byte	0xd7
+ 209 0122 0C       		.uleb128 0xc
+ 210 0123 77000000 		.4byte	0x77
+ 211 0127 00       		.byte	0
+ 212 0128 00       		.byte	0
+ 213              		.section	.debug_abbrev,"",%progbits
+ 214              	.Ldebug_abbrev0:
+ 215 0000 01       		.uleb128 0x1
+ 216 0001 11       		.uleb128 0x11
+ 217 0002 01       		.byte	0x1
+ 218 0003 25       		.uleb128 0x25
+ 219 0004 0E       		.uleb128 0xe
+ 220 0005 13       		.uleb128 0x13
+ 221 0006 0B       		.uleb128 0xb
+ 222 0007 03       		.uleb128 0x3
+ 223 0008 0E       		.uleb128 0xe
+ 224 0009 1B       		.uleb128 0x1b
+ 225 000a 0E       		.uleb128 0xe
+ 226 000b 55       		.uleb128 0x55
+ 227 000c 17       		.uleb128 0x17
+ 228 000d 11       		.uleb128 0x11
+ 229 000e 01       		.uleb128 0x1
+ 230 000f 10       		.uleb128 0x10
+ 231 0010 17       		.uleb128 0x17
+ 232 0011 00       		.byte	0
+ 233 0012 00       		.byte	0
+ 234 0013 02       		.uleb128 0x2
+ 235 0014 24       		.uleb128 0x24
+ 236 0015 00       		.byte	0
+ 237 0016 0B       		.uleb128 0xb
+ 238 0017 0B       		.uleb128 0xb
+ 239 0018 3E       		.uleb128 0x3e
+ 240 0019 0B       		.uleb128 0xb
+ 241 001a 03       		.uleb128 0x3
+ 242 001b 0E       		.uleb128 0xe
+ 243 001c 00       		.byte	0
+ 244 001d 00       		.byte	0
+ 245 001e 03       		.uleb128 0x3
+ 246 001f 24       		.uleb128 0x24
+ 247 0020 00       		.byte	0
+ 248 0021 0B       		.uleb128 0xb
+ 249 0022 0B       		.uleb128 0xb
+ 250 0023 3E       		.uleb128 0x3e
+ 251 0024 0B       		.uleb128 0xb
+ 252 0025 03       		.uleb128 0x3
+ 253 0026 08       		.uleb128 0x8
+ 254 0027 00       		.byte	0
+ 255 0028 00       		.byte	0
+ 256 0029 04       		.uleb128 0x4
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 6
+
+
+ 257 002a 16       		.uleb128 0x16
+ 258 002b 00       		.byte	0
+ 259 002c 03       		.uleb128 0x3
+ 260 002d 0E       		.uleb128 0xe
+ 261 002e 3A       		.uleb128 0x3a
+ 262 002f 0B       		.uleb128 0xb
+ 263 0030 3B       		.uleb128 0x3b
+ 264 0031 05       		.uleb128 0x5
+ 265 0032 49       		.uleb128 0x49
+ 266 0033 13       		.uleb128 0x13
+ 267 0034 00       		.byte	0
+ 268 0035 00       		.byte	0
+ 269 0036 05       		.uleb128 0x5
+ 270 0037 2E       		.uleb128 0x2e
+ 271 0038 01       		.byte	0x1
+ 272 0039 3F       		.uleb128 0x3f
+ 273 003a 19       		.uleb128 0x19
+ 274 003b 03       		.uleb128 0x3
+ 275 003c 0E       		.uleb128 0xe
+ 276 003d 3A       		.uleb128 0x3a
+ 277 003e 0B       		.uleb128 0xb
+ 278 003f 3B       		.uleb128 0x3b
+ 279 0040 0B       		.uleb128 0xb
+ 280 0041 49       		.uleb128 0x49
+ 281 0042 13       		.uleb128 0x13
+ 282 0043 11       		.uleb128 0x11
+ 283 0044 01       		.uleb128 0x1
+ 284 0045 12       		.uleb128 0x12
+ 285 0046 06       		.uleb128 0x6
+ 286 0047 40       		.uleb128 0x40
+ 287 0048 18       		.uleb128 0x18
+ 288 0049 9742     		.uleb128 0x2117
+ 289 004b 19       		.uleb128 0x19
+ 290 004c 01       		.uleb128 0x1
+ 291 004d 13       		.uleb128 0x13
+ 292 004e 00       		.byte	0
+ 293 004f 00       		.byte	0
+ 294 0050 06       		.uleb128 0x6
+ 295 0051 898201   		.uleb128 0x4109
+ 296 0054 00       		.byte	0
+ 297 0055 11       		.uleb128 0x11
+ 298 0056 01       		.uleb128 0x1
+ 299 0057 31       		.uleb128 0x31
+ 300 0058 13       		.uleb128 0x13
+ 301 0059 00       		.byte	0
+ 302 005a 00       		.byte	0
+ 303 005b 07       		.uleb128 0x7
+ 304 005c 898201   		.uleb128 0x4109
+ 305 005f 01       		.byte	0x1
+ 306 0060 11       		.uleb128 0x11
+ 307 0061 01       		.uleb128 0x1
+ 308 0062 31       		.uleb128 0x31
+ 309 0063 13       		.uleb128 0x13
+ 310 0064 01       		.uleb128 0x1
+ 311 0065 13       		.uleb128 0x13
+ 312 0066 00       		.byte	0
+ 313 0067 00       		.byte	0
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 7
+
+
+ 314 0068 08       		.uleb128 0x8
+ 315 0069 8A8201   		.uleb128 0x410a
+ 316 006c 00       		.byte	0
+ 317 006d 02       		.uleb128 0x2
+ 318 006e 18       		.uleb128 0x18
+ 319 006f 9142     		.uleb128 0x2111
+ 320 0071 18       		.uleb128 0x18
+ 321 0072 00       		.byte	0
+ 322 0073 00       		.byte	0
+ 323 0074 09       		.uleb128 0x9
+ 324 0075 898201   		.uleb128 0x4109
+ 325 0078 01       		.byte	0x1
+ 326 0079 11       		.uleb128 0x11
+ 327 007a 01       		.uleb128 0x1
+ 328 007b 31       		.uleb128 0x31
+ 329 007c 13       		.uleb128 0x13
+ 330 007d 00       		.byte	0
+ 331 007e 00       		.byte	0
+ 332 007f 0A       		.uleb128 0xa
+ 333 0080 2E       		.uleb128 0x2e
+ 334 0081 00       		.byte	0
+ 335 0082 3F       		.uleb128 0x3f
+ 336 0083 19       		.uleb128 0x19
+ 337 0084 03       		.uleb128 0x3
+ 338 0085 0E       		.uleb128 0xe
+ 339 0086 3A       		.uleb128 0x3a
+ 340 0087 0B       		.uleb128 0xb
+ 341 0088 3B       		.uleb128 0x3b
+ 342 0089 0B       		.uleb128 0xb
+ 343 008a 27       		.uleb128 0x27
+ 344 008b 19       		.uleb128 0x19
+ 345 008c 49       		.uleb128 0x49
+ 346 008d 13       		.uleb128 0x13
+ 347 008e 3C       		.uleb128 0x3c
+ 348 008f 19       		.uleb128 0x19
+ 349 0090 00       		.byte	0
+ 350 0091 00       		.byte	0
+ 351 0092 0B       		.uleb128 0xb
+ 352 0093 2E       		.uleb128 0x2e
+ 353 0094 01       		.byte	0x1
+ 354 0095 3F       		.uleb128 0x3f
+ 355 0096 19       		.uleb128 0x19
+ 356 0097 03       		.uleb128 0x3
+ 357 0098 0E       		.uleb128 0xe
+ 358 0099 3A       		.uleb128 0x3a
+ 359 009a 0B       		.uleb128 0xb
+ 360 009b 3B       		.uleb128 0x3b
+ 361 009c 0B       		.uleb128 0xb
+ 362 009d 27       		.uleb128 0x27
+ 363 009e 19       		.uleb128 0x19
+ 364 009f 3C       		.uleb128 0x3c
+ 365 00a0 19       		.uleb128 0x19
+ 366 00a1 01       		.uleb128 0x1
+ 367 00a2 13       		.uleb128 0x13
+ 368 00a3 00       		.byte	0
+ 369 00a4 00       		.byte	0
+ 370 00a5 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 8
+
+
+ 371 00a6 05       		.uleb128 0x5
+ 372 00a7 00       		.byte	0
+ 373 00a8 49       		.uleb128 0x49
+ 374 00a9 13       		.uleb128 0x13
+ 375 00aa 00       		.byte	0
+ 376 00ab 00       		.byte	0
+ 377 00ac 0D       		.uleb128 0xd
+ 378 00ad 2E       		.uleb128 0x2e
+ 379 00ae 01       		.byte	0x1
+ 380 00af 3F       		.uleb128 0x3f
+ 381 00b0 19       		.uleb128 0x19
+ 382 00b1 03       		.uleb128 0x3
+ 383 00b2 0E       		.uleb128 0xe
+ 384 00b3 3A       		.uleb128 0x3a
+ 385 00b4 0B       		.uleb128 0xb
+ 386 00b5 3B       		.uleb128 0x3b
+ 387 00b6 0B       		.uleb128 0xb
+ 388 00b7 27       		.uleb128 0x27
+ 389 00b8 19       		.uleb128 0x19
+ 390 00b9 3C       		.uleb128 0x3c
+ 391 00ba 19       		.uleb128 0x19
+ 392 00bb 00       		.byte	0
+ 393 00bc 00       		.byte	0
+ 394 00bd 00       		.byte	0
+ 395              		.section	.debug_aranges,"",%progbits
+ 396 0000 1C000000 		.4byte	0x1c
+ 397 0004 0200     		.2byte	0x2
+ 398 0006 00000000 		.4byte	.Ldebug_info0
+ 399 000a 04       		.byte	0x4
+ 400 000b 00       		.byte	0
+ 401 000c 0000     		.2byte	0
+ 402 000e 0000     		.2byte	0
+ 403 0010 00000000 		.4byte	.LFB34
+ 404 0014 2A000000 		.4byte	.LFE34-.LFB34
+ 405 0018 00000000 		.4byte	0
+ 406 001c 00000000 		.4byte	0
+ 407              		.section	.debug_ranges,"",%progbits
+ 408              	.Ldebug_ranges0:
+ 409 0000 00000000 		.4byte	.LFB34
+ 410 0004 2A000000 		.4byte	.LFE34
+ 411 0008 00000000 		.4byte	0
+ 412 000c 00000000 		.4byte	0
+ 413              		.section	.debug_line,"",%progbits
+ 414              	.Ldebug_line0:
+ 415 0000 8D000000 		.section	.debug_str,"MS",%progbits,1
+ 415      02005C00 
+ 415      00000201 
+ 415      FB0E0D00 
+ 415      01010101 
+ 416              	.LASF6:
+ 417 0000 6C6F6E67 		.ascii	"long long int\000"
+ 417      206C6F6E 
+ 417      6720696E 
+ 417      7400
+ 418              	.LASF10:
+ 419 000e 75696E74 		.ascii	"uint32\000"
+ 419      333200
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 9
+
+
+ 420              	.LASF8:
+ 421 0015 756E7369 		.ascii	"unsigned int\000"
+ 421      676E6564 
+ 421      20696E74 
+ 421      00
+ 422              	.LASF20:
+ 423 0022 50696E5F 		.ascii	"Pin_Blue_Write\000"
+ 423      426C7565 
+ 423      5F577269 
+ 423      746500
+ 424              	.LASF18:
+ 425 0031 6D61696E 		.ascii	"main\000"
+ 425      00
+ 426              	.LASF21:
+ 427 0036 43794465 		.ascii	"CyDelay\000"
+ 427      6C617900 
+ 428              	.LASF9:
+ 429 003e 75696E74 		.ascii	"uint8\000"
+ 429      3800
+ 430              	.LASF5:
+ 431 0044 6C6F6E67 		.ascii	"long unsigned int\000"
+ 431      20756E73 
+ 431      69676E65 
+ 431      6420696E 
+ 431      7400
+ 432              	.LASF7:
+ 433 0056 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 433      206C6F6E 
+ 433      6720756E 
+ 433      7369676E 
+ 433      65642069 
+ 434              	.LASF11:
+ 435 006d 666C6F61 		.ascii	"float\000"
+ 435      7400
+ 436              	.LASF1:
+ 437 0073 756E7369 		.ascii	"unsigned char\000"
+ 437      676E6564 
+ 437      20636861 
+ 437      7200
+ 438              	.LASF13:
+ 439 0081 63686172 		.ascii	"char\000"
+ 439      00
+ 440              	.LASF4:
+ 441 0086 6C6F6E67 		.ascii	"long int\000"
+ 441      20696E74 
+ 441      00
+ 442              	.LASF17:
+ 443 008f 433A5C55 		.ascii	"C:\\Users\\Chris\\Desktop\\ECEC 304\\Labs\\Lesson1_"
+ 443      73657273 
+ 443      5C436872 
+ 443      69735C44 
+ 443      65736B74 
+ 444 00bc 4368616C 		.ascii	"Challenge.cydsn\000"
+ 444      6C656E67 
+ 444      652E6379 
+ 444      64736E00 
+ 445              	.LASF2:
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccGEKZOZ.s 			page 10
+
+
+ 446 00cc 73686F72 		.ascii	"short int\000"
+ 446      7420696E 
+ 446      7400
+ 447              	.LASF12:
+ 448 00d6 646F7562 		.ascii	"double\000"
+ 448      6C6500
+ 449              	.LASF3:
+ 450 00dd 73686F72 		.ascii	"short unsigned int\000"
+ 450      7420756E 
+ 450      7369676E 
+ 450      65642069 
+ 450      6E7400
+ 451              	.LASF0:
+ 452 00f0 7369676E 		.ascii	"signed char\000"
+ 452      65642063 
+ 452      68617200 
+ 453              	.LASF15:
+ 454 00fc 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 454      4320342E 
+ 454      392E3320 
+ 454      32303135 
+ 454      30333033 
+ 455 012f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 455      20726576 
+ 455      6973696F 
+ 455      6E203232 
+ 455      31323230 
+ 456 0162 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 456      66756E63 
+ 456      74696F6E 
+ 456      2D736563 
+ 456      74696F6E 
+ 457              	.LASF19:
+ 458 018a 50696E5F 		.ascii	"Pin_Blue_Read\000"
+ 458      426C7565 
+ 458      5F526561 
+ 458      6400
+ 459              	.LASF16:
+ 460 0198 2E5C6D61 		.ascii	".\\main.c\000"
+ 460      696E2E63 
+ 460      00
+ 461              	.LASF14:
+ 462 01a1 73697A65 		.ascii	"sizetype\000"
+ 462      74797065 
+ 462      00
+ 463              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

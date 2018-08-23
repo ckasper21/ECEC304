@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="3" name="Labs" persistent="" platform="NOT_USED">
+<current_project name=".\Lesson16_Challenge.cydsn\Lesson16_Challenge.cyprj" />
+<wrkspc_folders />
+<files />
+<projects>
+<v>.\Lesson1.cydsn\Lesson1.cyprj</v>
+<v>.\Lesson2.cydsn\Lesson2.cyprj</v>
+<v>.\Lesson3.cydsn\Lesson3.cyprj</v>
+<v>.\Lesson4.cydsn\Lesson4.cyprj</v>
+<v>.\Lesson5.cydsn\Lesson5.cyprj</v>
+<v>.\Lesson6.cydsn\Lesson6.cyprj</v>
+<v>.\Lesson7.cydsn\Lesson7.cyprj</v>
+<v>.\Lesson8.cydsn\Lesson8.cyprj</v>
+<v>.\Lesson9.cydsn\Lesson9.cyprj</v>
+<v>.\Lesson10.cydsn\Lesson10.cyprj</v>
+<v>.\Lesson11.cydsn\Lesson11.cyprj</v>
+<v>.\Lesson12.cydsn\Lesson12.cyprj</v>
+<v>.\Lesson1_Challenge.cydsn\Lesson1_Challenge.cyprj</v>
+<v>.\Lesson2_Challenge.cydsn\Lesson2_Challenge.cyprj</v>
+<v>.\Lesson3_Challenge.cydsn\Lesson3_Challenge.cyprj</v>
+<v>.\Lesson4_Challenge.cydsn\Lesson4_Challenge.cyprj</v>
+<v>.\Lesson13.cydsn\Lesson13.cyprj</v>
+<v>.\Lesson14.cydsn\Lesson14.cyprj</v>
+<v>.\Lesson15.cydsn\Lesson15.cyprj</v>
+<v>.\Lesson16.cydsn\Lesson16.cyprj</v>
+<v>.\Lesson17.cydsn\Lesson17.cyprj</v>
+<v>.\Lesson5_ Challenge.cydsn\Lesson5_ Challenge.cyprj</v>
+<v>.\Lesson6_Challenge.cydsn\Lesson6_Challenge.cyprj</v>
+<v>.\Lesson8_Challenge.cydsn\Lesson8_Challenge.cyprj</v>
+<v>.\Lesson9_Challenge.cydsn\Lesson9_Challenge.cyprj</v>
+<v>.\Lesson10_Challenge.cydsn\Lesson10_Challenge.cyprj</v>
+<v>.\Lesson12_Challenge.cydsn\Lesson12_Challenge.cyprj</v>
+<v>.\Lesson13_Challenge.cydsn\Lesson13_Challenge.cyprj</v>
+<v>.\Lesson14_Challenge.cydsn\Lesson14_Challenge.cyprj</v>
+<v>.\Lesson15_Challenge.cydsn\Lesson15_Challenge.cyprj</v>
+<v>.\Lesson16_Challenge.cydsn\Lesson16_Challenge.cyprj</v>
+<v>.\Lesson17_Challenge.cydsn\Lesson17_Challenge.cyprj</v>
+</projects>
+<workspace_id v="b945fdc9-fcf3-44f1-93b8-609c9e2f1616" />
+<WriteAppVersionLastSavedWith v="3.3.0.9604" />
+<WriteAppMarketingVersionLastSavedWith v="3.3 CP3" />
+<CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjDependencyList" version="4">
+<wrkspc_dependencies />
+</CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316>
+<CyGuid_63b68103-67f5-4406-8da6-5c8625765b82 type_name="CyDesigner.Common.ProjMgmt.Model.CyIgnoredSystemDepsList" version="1">
+<wrkspc_dependencies />
+</CyGuid_63b68103-67f5-4406-8da6-5c8625765b82>
+</CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd>
+</CyXmlSerializer>

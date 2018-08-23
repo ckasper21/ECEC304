@@ -1,0 +1,28 @@
+C:\Users\cdc75\Desktop\Labs\Lesson1.cydsn\Lesson1.cyprj|86f2cfc4-a5ab-4f2a-be2a-7515aea3027c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d32f77b0-ed8d-4d54-b914-cceccac1a75e
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ab2fe5cd-8f3f-4171-89dc-6e4c8c6a7bd6
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|97265c45-b40e-4500-95bf-c1b6bfd34b56
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|fbc18861-5e0f-4f16-a2b1-9b627f49b0b4
+C:\Users\cdc75\Desktop\Labs\Lesson2.cydsn\Lesson2.cyprj|bf39981a-0bab-4b0b-a0c8-1313efe90014
+C:\Users\cdc75\Desktop\Labs\Lesson3.cydsn\Lesson3.cyprj|36a3c0dd-f79e-45cb-9a56-d31c0d5517f8
+C:\Users\cdc75\Desktop\Labs\Lesson4.cydsn\Lesson4.cyprj|a256d6d2-d8f6-41e1-a91a-405a2b44ce72
+C:\Users\cdc75\Desktop\Labs\Lesson5.cydsn\Lesson5.cyprj|93469b66-0f1a-424a-b321-d259c3f34007
+C:\Users\cdc75\Desktop\Labs\Lesson6.cydsn\Lesson6.cyprj|70c78c4c-4fb5-4dcc-b3a4-9357cabe9717
+C:\Users\cdc75\Desktop\Labs\Lesson7.cydsn\Lesson7.cyprj|f53b95e5-4854-4bc0-8b10-765cbb136ba3
+C:\Users\cdc75\Desktop\Labs\Lesson8.cydsn\Lesson8.cyprj|15aefbbc-f3d8-4c4b-b761-126f0b86276b
+C:\Users\cdc75\Desktop\Labs\Lesson9.cydsn\Lesson9.cyprj|a8d47943-7184-4db7-a130-76fcb2e6286d
+C:\Users\cdc75\Desktop\Labs\Lesson10.cydsn\Lesson10.cyprj|bd3f4530-21d8-416f-930f-489046452adc
+C:\Users\cdc75\Desktop\Labs\Lesson11.cydsn\Lesson11.cyprj|94de6663-3e33-4f89-a525-215262f6b593
+C:\Users\cdc75\Desktop\Labs\Lesson12.cydsn\Lesson12.cyprj|5e6312db-f42c-4ebe-a2d6-ea12485fe566
+C:\Users\cdc75\Desktop\Labs\Lesson1_Challenge.cydsn\Lesson1_Challenge.cyprj|16472f06-f63a-4436-8eb2-b087b1a7dba0
+C:\Users\cdc75\Desktop\Labs\Lesson2_Challenge.cydsn\Lesson2_Challenge.cyprj|8f990ed0-7222-4957-a03e-db2804cf068b
+C:\Users\cdc75\Desktop\Labs\Lesson3_Challenge.cydsn\Lesson3_Challenge.cyprj|cd475798-c642-4735-8a8e-d6e4fc774875
+C:\Users\cdc75\Desktop\Labs\Lesson4_Challenge.cydsn\Lesson4_Challenge.cyprj|8ef7ac47-0b1d-425a-9ed1-f65736aafe6f
+C:\Users\cdc75\Desktop\Labs\Lesson13.cydsn\Lesson13.cyprj|7c94ea5d-ed4a-4771-88bd-92b446ddb218
+C:\Users\cdc75\Desktop\Labs\Lesson14.cydsn\Lesson14.cyprj|40f870ee-0c71-462d-aadc-d48620546803
+C:\Users\cdc75\Desktop\Labs\Lesson15.cydsn\Lesson15.cyprj|0a0b4c10-85e5-4679-a119-9ba01890bf6d
+C:\Users\cdc75\Desktop\Labs\Lesson16.cydsn\Lesson16.cyprj|57420eb7-cebe-4443-abf3-a342a0497ed6
+C:\Users\cdc75\Desktop\Labs\Lesson17.cydsn\Lesson17.cyprj|3270b27e-e801-4122-9617-020bfb0ebb13
+C:\Users\cdc75\Desktop\Labs\Lesson5_ Challenge.cydsn\Lesson5_ Challenge.cyprj|85d8077d-9e1c-469b-800e-2e22bdfabd9d
+C:\Users\cdc75\Desktop\Labs\Lesson6_Challenge.cydsn\Lesson6_Challenge.cyprj|88d0f9bc-2d10-49ee-84f1-1e97187ae7e0
+C:\Users\cdc75\Desktop\Labs\Lesson8_Challenge.cydsn\Lesson8_Challenge.cyprj|a54767cf-31c5-4a18-9bfc-be148fc4b505

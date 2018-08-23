@@ -1,0 +1,34 @@
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson1.cydsn\Lesson1.cyprj|203df2b5-d983-44f5-afe1-cddfa9097807
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|249cb17b-bf2e-4638-bc16-b84ba4a031a8
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|838f4e52-b6ef-4ca1-9026-34a40b9ad282
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|a7bd8dc5-d29b-4f1d-9da9-fbf150267fb0
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c0703894-6f05-4791-ae87-2cbf767783e5
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson2.cydsn\Lesson2.cyprj|203a30df-37a9-4b4f-8ae3-4ce33f34adc0
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson3.cydsn\Lesson3.cyprj|b4613af6-84b1-4659-8431-f26ef9557366
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson4.cydsn\Lesson4.cyprj|15476539-26e2-4499-9b29-37830084afcd
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson5.cydsn\Lesson5.cyprj|9facb0a7-475b-4265-b5fe-e86abc0a2327
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson6.cydsn\Lesson6.cyprj|84caf95c-35ec-4f91-a659-ce22461f685f
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson7.cydsn\Lesson7.cyprj|c2973293-26de-40b3-8049-a396044b5f02
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson8.cydsn\Lesson8.cyprj|0fdbc10d-2489-487a-bf4b-f060401a82c8
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson9.cydsn\Lesson9.cyprj|f11a9614-d59f-4b66-9cce-be6fdae983c5
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson10.cydsn\Lesson10.cyprj|b9c0de90-9b70-4c4f-8426-ba7fc1d14fd6
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson11.cydsn\Lesson11.cyprj|5103a21a-d556-4aa8-bafa-f62a3adaa211
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson12.cydsn\Lesson12.cyprj|cb736603-86be-4a3c-a2b2-04e42766b339
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson1_Challenge.cydsn\Lesson1_Challenge.cyprj|83c42044-17e2-496d-af2b-0b88aa70049d
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson2_Challenge.cydsn\Lesson2_Challenge.cyprj|4fef65d1-f7f2-4bec-b7d7-507ca8c67ffe
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson3_Challenge.cydsn\Lesson3_Challenge.cyprj|f4f0d769-d26a-4aa4-a47d-a68d016ad4e3
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson4_Challenge.cydsn\Lesson4_Challenge.cyprj|d1d4cb36-1957-46d6-9ae7-3c20d469f875
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson13.cydsn\Lesson13.cyprj|b03a6495-1a9f-4d0b-8229-3f02833b7d21
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson14.cydsn\Lesson14.cyprj|13c6cc26-1e52-4a27-9c76-48cdf1c7ff89
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson15.cydsn\Lesson15.cyprj|c80fb500-5156-434b-86cd-0347bc72fd09
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson16.cydsn\Lesson16.cyprj|0317da79-e35d-4468-b9be-638f59bcaf20
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson17.cydsn\Lesson17.cyprj|85e452b3-1b68-4f29-b0d2-db253cad94c6
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson5_ Challenge.cydsn\Lesson5_ Challenge.cyprj|c187b2d8-9ea1-465f-b37f-f08b2360b41e
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson6_Challenge.cydsn\Lesson6_Challenge.cyprj|5f428b53-3b22-45cb-bb33-b52ddacf2c2f
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson8_Challenge.cydsn\Lesson8_Challenge.cyprj|386ceb02-4524-4e15-abe3-04be98eed2fa
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson9_Challenge.cydsn\Lesson9_Challenge.cyprj|ca09276d-0e31-4dc1-a13e-8cb8247039dd
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson10_Challenge.cydsn\Lesson10_Challenge.cyprj|81f7cfa9-7bc3-4469-8cb5-7602e4fcf34b
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson12_Challenge.cydsn\Lesson12_Challenge.cyprj|50362d2f-18c4-4966-b91e-fac2d9cc4830
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson13_Challenge.cydsn\Lesson13_Challenge.cyprj|2c71e59f-cc0c-4c13-9c53-a69fd310b08d
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson14_Challenge.cydsn\Lesson14_Challenge.cyprj|2609a66e-5c3a-4128-9b00-b72cf27d4614
+C:\Users\Chris\Desktop\ECEC 304\Labs\Lesson15_Challenge.cydsn\Lesson15_Challenge.cyprj|bcc66d45-da4e-4b3e-ba2d-b0eb95cd60ab

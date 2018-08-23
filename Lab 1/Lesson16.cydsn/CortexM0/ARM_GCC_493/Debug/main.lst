@@ -1,0 +1,833 @@
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Timer_Int_Handler,"ax",%progbits
+  18              		.align	2
+  19              		.global	Timer_Int_Handler
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Timer_Int_Handler, %function
+  23              	Timer_Int_Handler:
+  24              	.LFB34:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** CY_ISR (Timer_Int_Handler)
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  16:.\main.c      ****     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
+  32              		.loc 1 16 0
+  33 0002 0120     		mov	r0, #1
+  34 0004 FFF7FEFF 		bl	Timer_ClearInterrupt
+  35              	.LVL0:
+  17:.\main.c      **** }
+  36              		.loc 1 17 0
+  37              		@ sp needed
+  38 0008 08BD     		pop	{r3, pc}
+  39              		.cfi_endproc
+  40              	.LFE34:
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 2
+
+
+  41              		.size	Timer_Int_Handler, .-Timer_Int_Handler
+  42              		.section	.text.main,"ax",%progbits
+  43              		.align	2
+  44              		.global	main
+  45              		.code	16
+  46              		.thumb_func
+  47              		.type	main, %function
+  48              	main:
+  49              	.LFB35:
+  18:.\main.c      **** 
+  19:.\main.c      **** int main()
+  20:.\main.c      **** {
+  50              		.loc 1 20 0
+  51              		.cfi_startproc
+  52 0000 08B5     		push	{r3, lr}
+  53              		.cfi_def_cfa_offset 8
+  54              		.cfi_offset 3, -8
+  55              		.cfi_offset 14, -4
+  21:.\main.c      ****     CyGlobalIntEnable;  /* Enable global interrupts */
+  56              		.loc 1 21 0
+  57              	@ 21 ".\main.c" 1
+  58 0002 62B6     		CPSIE   i
+  59              	@ 0 "" 2
+  22:.\main.c      ****     
+  23:.\main.c      ****     UART_Start();
+  60              		.loc 1 23 0
+  61              		.code	16
+  62 0004 FFF7FEFF 		bl	UART_Start
+  63              	.LVL1:
+  24:.\main.c      ****     
+  25:.\main.c      ****     Timer_Int_StartEx(Timer_Int_Handler);
+  64              		.loc 1 25 0
+  65 0008 0848     		ldr	r0, .L4
+  66 000a FFF7FEFF 		bl	Timer_Int_StartEx
+  67              	.LVL2:
+  68              	.L3:
+  26:.\main.c      ****     
+  27:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  28:.\main.c      ****     
+  29:.\main.c      ****     for(;;)
+  30:.\main.c      ****     {
+  31:.\main.c      ****         CyDelay(5000);
+  69              		.loc 1 31 0 discriminator 1
+  70 000e 0848     		ldr	r0, .L4+4
+  71 0010 FFF7FEFF 		bl	CyDelay
+  72              	.LVL3:
+  32:.\main.c      ****         UART_UartPutString("Sleeping...\r\n");
+  73              		.loc 1 32 0 discriminator 1
+  74 0014 0748     		ldr	r0, .L4+8
+  75 0016 FFF7FEFF 		bl	UART_UartPutString
+  76              	.LVL4:
+  33:.\main.c      ****         Timer_Start();
+  77              		.loc 1 33 0 discriminator 1
+  78 001a FFF7FEFF 		bl	Timer_Start
+  79              	.LVL5:
+  34:.\main.c      ****         CySysPmSleep();
+  80              		.loc 1 34 0 discriminator 1
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 3
+
+
+  81 001e FFF7FEFF 		bl	CySysPmSleep
+  82              	.LVL6:
+  35:.\main.c      ****         UART_UartPutString("AWAKE! \r\n");
+  83              		.loc 1 35 0 discriminator 1
+  84 0022 0548     		ldr	r0, .L4+12
+  85 0024 FFF7FEFF 		bl	UART_UartPutString
+  86              	.LVL7:
+  36:.\main.c      ****     }
+  87              		.loc 1 36 0 discriminator 1
+  88 0028 F1E7     		b	.L3
+  89              	.L5:
+  90 002a C046     		.align	2
+  91              	.L4:
+  92 002c 00000000 		.word	Timer_Int_Handler
+  93 0030 88130000 		.word	5000
+  94 0034 00000000 		.word	.LC1
+  95 0038 10000000 		.word	.LC3
+  96              		.cfi_endproc
+  97              	.LFE35:
+  98              		.size	main, .-main
+  99              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 100              		.align	2
+ 101              	.LC1:
+ 102 0000 536C6565 		.ascii	"Sleeping...\015\012\000"
+ 102      70696E67 
+ 102      2E2E2E0D 
+ 102      0A00
+ 103 000e 0000     		.space	2
+ 104              	.LC3:
+ 105 0010 4157414B 		.ascii	"AWAKE! \015\012\000"
+ 105      4521200D 
+ 105      0A00
+ 106 001a 0000     		.text
+ 107              	.Letext0:
+ 108              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 109              		.file 3 "Generated_Source\\PSoC4/Timer.h"
+ 110              		.file 4 "Generated_Source\\PSoC4/Timer_Int.h"
+ 111              		.file 5 "Generated_Source\\PSoC4/CyLib.h"
+ 112              		.file 6 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 113              		.file 7 "Generated_Source\\PSoC4/UART.h"
+ 114              		.file 8 "Generated_Source\\PSoC4/cyPm.h"
+ 115              		.section	.debug_info,"",%progbits
+ 116              	.Ldebug_info0:
+ 117 0000 C6010000 		.4byte	0x1c6
+ 118 0004 0400     		.2byte	0x4
+ 119 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 120 000a 04       		.byte	0x4
+ 121 000b 01       		.uleb128 0x1
+ 122 000c 2D010000 		.4byte	.LASF25
+ 123 0010 01       		.byte	0x1
+ 124 0011 BB010000 		.4byte	.LASF26
+ 125 0015 33000000 		.4byte	.LASF27
+ 126 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 127 001d 00000000 		.4byte	0
+ 128 0021 00000000 		.4byte	.Ldebug_line0
+ 129 0025 02       		.uleb128 0x2
+ 130 0026 01       		.byte	0x1
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 4
+
+
+ 131 0027 06       		.byte	0x6
+ 132 0028 FF000000 		.4byte	.LASF0
+ 133 002c 02       		.uleb128 0x2
+ 134 002d 01       		.byte	0x1
+ 135 002e 08       		.byte	0x8
+ 136 002f B2000000 		.4byte	.LASF1
+ 137 0033 02       		.uleb128 0x2
+ 138 0034 02       		.byte	0x2
+ 139 0035 05       		.byte	0x5
+ 140 0036 DB000000 		.4byte	.LASF2
+ 141 003a 02       		.uleb128 0x2
+ 142 003b 02       		.byte	0x2
+ 143 003c 07       		.byte	0x7
+ 144 003d EC000000 		.4byte	.LASF3
+ 145 0041 02       		.uleb128 0x2
+ 146 0042 04       		.byte	0x4
+ 147 0043 05       		.byte	0x5
+ 148 0044 C5000000 		.4byte	.LASF4
+ 149 0048 02       		.uleb128 0x2
+ 150 0049 04       		.byte	0x4
+ 151 004a 07       		.byte	0x7
+ 152 004b 78000000 		.4byte	.LASF5
+ 153 004f 02       		.uleb128 0x2
+ 154 0050 08       		.byte	0x8
+ 155 0051 05       		.byte	0x5
+ 156 0052 00000000 		.4byte	.LASF6
+ 157 0056 02       		.uleb128 0x2
+ 158 0057 08       		.byte	0x8
+ 159 0058 07       		.byte	0x7
+ 160 0059 8A000000 		.4byte	.LASF7
+ 161 005d 03       		.uleb128 0x3
+ 162 005e 04       		.byte	0x4
+ 163 005f 05       		.byte	0x5
+ 164 0060 696E7400 		.ascii	"int\000"
+ 165 0064 02       		.uleb128 0x2
+ 166 0065 04       		.byte	0x4
+ 167 0066 07       		.byte	0x7
+ 168 0067 21000000 		.4byte	.LASF8
+ 169 006b 04       		.uleb128 0x4
+ 170 006c 0E000000 		.4byte	.LASF11
+ 171 0070 02       		.byte	0x2
+ 172 0071 9A01     		.2byte	0x19a
+ 173 0073 48000000 		.4byte	0x48
+ 174 0077 02       		.uleb128 0x2
+ 175 0078 04       		.byte	0x4
+ 176 0079 04       		.byte	0x4
+ 177 007a A1000000 		.4byte	.LASF9
+ 178 007e 02       		.uleb128 0x2
+ 179 007f 08       		.byte	0x8
+ 180 0080 04       		.byte	0x4
+ 181 0081 E5000000 		.4byte	.LASF10
+ 182 0085 04       		.uleb128 0x4
+ 183 0086 F2010000 		.4byte	.LASF12
+ 184 008a 02       		.byte	0x2
+ 185 008b A901     		.2byte	0x1a9
+ 186 008d 91000000 		.4byte	0x91
+ 187 0091 02       		.uleb128 0x2
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 5
+
+
+ 188 0092 01       		.byte	0x1
+ 189 0093 08       		.byte	0x8
+ 190 0094 C0000000 		.4byte	.LASF13
+ 191 0098 04       		.uleb128 0x4
+ 192 0099 CE000000 		.4byte	.LASF14
+ 193 009d 02       		.byte	0x2
+ 194 009e 5402     		.2byte	0x254
+ 195 00a0 A4000000 		.4byte	0xa4
+ 196 00a4 05       		.uleb128 0x5
+ 197 00a5 04       		.byte	0x4
+ 198 00a6 AA000000 		.4byte	0xaa
+ 199 00aa 06       		.uleb128 0x6
+ 200 00ab 02       		.uleb128 0x2
+ 201 00ac 04       		.byte	0x4
+ 202 00ad 07       		.byte	0x7
+ 203 00ae D7010000 		.4byte	.LASF15
+ 204 00b2 07       		.uleb128 0x7
+ 205 00b3 E0010000 		.4byte	.LASF16
+ 206 00b7 01       		.byte	0x1
+ 207 00b8 0E       		.byte	0xe
+ 208 00b9 00000000 		.4byte	.LFB34
+ 209 00bd 0A000000 		.4byte	.LFE34-.LFB34
+ 210 00c1 01       		.uleb128 0x1
+ 211 00c2 9C       		.byte	0x9c
+ 212 00c3 D7000000 		.4byte	0xd7
+ 213 00c7 08       		.uleb128 0x8
+ 214 00c8 08000000 		.4byte	.LVL0
+ 215 00cc 62010000 		.4byte	0x162
+ 216 00d0 09       		.uleb128 0x9
+ 217 00d1 01       		.uleb128 0x1
+ 218 00d2 50       		.byte	0x50
+ 219 00d3 01       		.uleb128 0x1
+ 220 00d4 31       		.byte	0x31
+ 221 00d5 00       		.byte	0
+ 222 00d6 00       		.byte	0
+ 223 00d7 0A       		.uleb128 0xa
+ 224 00d8 2E000000 		.4byte	.LASF17
+ 225 00dc 01       		.byte	0x1
+ 226 00dd 13       		.byte	0x13
+ 227 00de 5D000000 		.4byte	0x5d
+ 228 00e2 00000000 		.4byte	.LFB35
+ 229 00e6 3C000000 		.4byte	.LFE35-.LFB35
+ 230 00ea 01       		.uleb128 0x1
+ 231 00eb 9C       		.byte	0x9c
+ 232 00ec 62010000 		.4byte	0x162
+ 233 00f0 0B       		.uleb128 0xb
+ 234 00f1 08000000 		.4byte	.LVL1
+ 235 00f5 74010000 		.4byte	0x174
+ 236 00f9 0C       		.uleb128 0xc
+ 237 00fa 0E000000 		.4byte	.LVL2
+ 238 00fe 7B010000 		.4byte	0x17b
+ 239 0102 10010000 		.4byte	0x110
+ 240 0106 09       		.uleb128 0x9
+ 241 0107 01       		.uleb128 0x1
+ 242 0108 50       		.byte	0x50
+ 243 0109 05       		.uleb128 0x5
+ 244 010a 03       		.byte	0x3
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 6
+
+
+ 245 010b 00000000 		.4byte	Timer_Int_Handler
+ 246 010f 00       		.byte	0
+ 247 0110 0C       		.uleb128 0xc
+ 248 0111 14000000 		.4byte	.LVL3
+ 249 0115 8C010000 		.4byte	0x18c
+ 250 0119 25010000 		.4byte	0x125
+ 251 011d 09       		.uleb128 0x9
+ 252 011e 01       		.uleb128 0x1
+ 253 011f 50       		.byte	0x50
+ 254 0120 03       		.uleb128 0x3
+ 255 0121 0A       		.byte	0xa
+ 256 0122 8813     		.2byte	0x1388
+ 257 0124 00       		.byte	0
+ 258 0125 0C       		.uleb128 0xc
+ 259 0126 1A000000 		.4byte	.LVL4
+ 260 012a 9D010000 		.4byte	0x19d
+ 261 012e 3C010000 		.4byte	0x13c
+ 262 0132 09       		.uleb128 0x9
+ 263 0133 01       		.uleb128 0x1
+ 264 0134 50       		.byte	0x50
+ 265 0135 05       		.uleb128 0x5
+ 266 0136 03       		.byte	0x3
+ 267 0137 00000000 		.4byte	.LC1
+ 268 013b 00       		.byte	0
+ 269 013c 0B       		.uleb128 0xb
+ 270 013d 1E000000 		.4byte	.LVL5
+ 271 0141 BA010000 		.4byte	0x1ba
+ 272 0145 0B       		.uleb128 0xb
+ 273 0146 22000000 		.4byte	.LVL6
+ 274 014a C2010000 		.4byte	0x1c2
+ 275 014e 08       		.uleb128 0x8
+ 276 014f 28000000 		.4byte	.LVL7
+ 277 0153 9D010000 		.4byte	0x19d
+ 278 0157 09       		.uleb128 0x9
+ 279 0158 01       		.uleb128 0x1
+ 280 0159 50       		.byte	0x50
+ 281 015a 05       		.uleb128 0x5
+ 282 015b 03       		.byte	0x3
+ 283 015c 10000000 		.4byte	.LC3
+ 284 0160 00       		.byte	0
+ 285 0161 00       		.byte	0
+ 286 0162 0D       		.uleb128 0xd
+ 287 0163 18010000 		.4byte	.LASF18
+ 288 0167 03       		.byte	0x3
+ 289 0168 4701     		.2byte	0x147
+ 290 016a 74010000 		.4byte	0x174
+ 291 016e 0E       		.uleb128 0xe
+ 292 016f 6B000000 		.4byte	0x6b
+ 293 0173 00       		.byte	0
+ 294 0174 0F       		.uleb128 0xf
+ 295 0175 A7000000 		.4byte	.LASF22
+ 296 0179 07       		.byte	0x7
+ 297 017a 6E       		.byte	0x6e
+ 298 017b 10       		.uleb128 0x10
+ 299 017c 5E000000 		.4byte	.LASF19
+ 300 0180 04       		.byte	0x4
+ 301 0181 18       		.byte	0x18
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 7
+
+
+ 302 0182 8C010000 		.4byte	0x18c
+ 303 0186 0E       		.uleb128 0xe
+ 304 0187 98000000 		.4byte	0x98
+ 305 018b 00       		.byte	0
+ 306 018c 10       		.uleb128 0x10
+ 307 018d 70000000 		.4byte	.LASF20
+ 308 0191 05       		.byte	0x5
+ 309 0192 D7       		.byte	0xd7
+ 310 0193 9D010000 		.4byte	0x19d
+ 311 0197 0E       		.uleb128 0xe
+ 312 0198 6B000000 		.4byte	0x6b
+ 313 019c 00       		.byte	0
+ 314 019d 0D       		.uleb128 0xd
+ 315 019e C4010000 		.4byte	.LASF21
+ 316 01a2 06       		.byte	0x6
+ 317 01a3 2103     		.2byte	0x321
+ 318 01a5 AF010000 		.4byte	0x1af
+ 319 01a9 0E       		.uleb128 0xe
+ 320 01aa AF010000 		.4byte	0x1af
+ 321 01ae 00       		.byte	0
+ 322 01af 05       		.uleb128 0x5
+ 323 01b0 04       		.byte	0x4
+ 324 01b1 B5010000 		.4byte	0x1b5
+ 325 01b5 11       		.uleb128 0x11
+ 326 01b6 85000000 		.4byte	0x85
+ 327 01ba 12       		.uleb128 0x12
+ 328 01bb 15000000 		.4byte	.LASF23
+ 329 01bf 03       		.byte	0x3
+ 330 01c0 3201     		.2byte	0x132
+ 331 01c2 0F       		.uleb128 0xf
+ 332 01c3 0B010000 		.4byte	.LASF24
+ 333 01c7 08       		.byte	0x8
+ 334 01c8 56       		.byte	0x56
+ 335 01c9 00       		.byte	0
+ 336              		.section	.debug_abbrev,"",%progbits
+ 337              	.Ldebug_abbrev0:
+ 338 0000 01       		.uleb128 0x1
+ 339 0001 11       		.uleb128 0x11
+ 340 0002 01       		.byte	0x1
+ 341 0003 25       		.uleb128 0x25
+ 342 0004 0E       		.uleb128 0xe
+ 343 0005 13       		.uleb128 0x13
+ 344 0006 0B       		.uleb128 0xb
+ 345 0007 03       		.uleb128 0x3
+ 346 0008 0E       		.uleb128 0xe
+ 347 0009 1B       		.uleb128 0x1b
+ 348 000a 0E       		.uleb128 0xe
+ 349 000b 55       		.uleb128 0x55
+ 350 000c 17       		.uleb128 0x17
+ 351 000d 11       		.uleb128 0x11
+ 352 000e 01       		.uleb128 0x1
+ 353 000f 10       		.uleb128 0x10
+ 354 0010 17       		.uleb128 0x17
+ 355 0011 00       		.byte	0
+ 356 0012 00       		.byte	0
+ 357 0013 02       		.uleb128 0x2
+ 358 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 8
+
+
+ 359 0015 00       		.byte	0
+ 360 0016 0B       		.uleb128 0xb
+ 361 0017 0B       		.uleb128 0xb
+ 362 0018 3E       		.uleb128 0x3e
+ 363 0019 0B       		.uleb128 0xb
+ 364 001a 03       		.uleb128 0x3
+ 365 001b 0E       		.uleb128 0xe
+ 366 001c 00       		.byte	0
+ 367 001d 00       		.byte	0
+ 368 001e 03       		.uleb128 0x3
+ 369 001f 24       		.uleb128 0x24
+ 370 0020 00       		.byte	0
+ 371 0021 0B       		.uleb128 0xb
+ 372 0022 0B       		.uleb128 0xb
+ 373 0023 3E       		.uleb128 0x3e
+ 374 0024 0B       		.uleb128 0xb
+ 375 0025 03       		.uleb128 0x3
+ 376 0026 08       		.uleb128 0x8
+ 377 0027 00       		.byte	0
+ 378 0028 00       		.byte	0
+ 379 0029 04       		.uleb128 0x4
+ 380 002a 16       		.uleb128 0x16
+ 381 002b 00       		.byte	0
+ 382 002c 03       		.uleb128 0x3
+ 383 002d 0E       		.uleb128 0xe
+ 384 002e 3A       		.uleb128 0x3a
+ 385 002f 0B       		.uleb128 0xb
+ 386 0030 3B       		.uleb128 0x3b
+ 387 0031 05       		.uleb128 0x5
+ 388 0032 49       		.uleb128 0x49
+ 389 0033 13       		.uleb128 0x13
+ 390 0034 00       		.byte	0
+ 391 0035 00       		.byte	0
+ 392 0036 05       		.uleb128 0x5
+ 393 0037 0F       		.uleb128 0xf
+ 394 0038 00       		.byte	0
+ 395 0039 0B       		.uleb128 0xb
+ 396 003a 0B       		.uleb128 0xb
+ 397 003b 49       		.uleb128 0x49
+ 398 003c 13       		.uleb128 0x13
+ 399 003d 00       		.byte	0
+ 400 003e 00       		.byte	0
+ 401 003f 06       		.uleb128 0x6
+ 402 0040 15       		.uleb128 0x15
+ 403 0041 00       		.byte	0
+ 404 0042 27       		.uleb128 0x27
+ 405 0043 19       		.uleb128 0x19
+ 406 0044 00       		.byte	0
+ 407 0045 00       		.byte	0
+ 408 0046 07       		.uleb128 0x7
+ 409 0047 2E       		.uleb128 0x2e
+ 410 0048 01       		.byte	0x1
+ 411 0049 3F       		.uleb128 0x3f
+ 412 004a 19       		.uleb128 0x19
+ 413 004b 03       		.uleb128 0x3
+ 414 004c 0E       		.uleb128 0xe
+ 415 004d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 9
+
+
+ 416 004e 0B       		.uleb128 0xb
+ 417 004f 3B       		.uleb128 0x3b
+ 418 0050 0B       		.uleb128 0xb
+ 419 0051 27       		.uleb128 0x27
+ 420 0052 19       		.uleb128 0x19
+ 421 0053 11       		.uleb128 0x11
+ 422 0054 01       		.uleb128 0x1
+ 423 0055 12       		.uleb128 0x12
+ 424 0056 06       		.uleb128 0x6
+ 425 0057 40       		.uleb128 0x40
+ 426 0058 18       		.uleb128 0x18
+ 427 0059 9742     		.uleb128 0x2117
+ 428 005b 19       		.uleb128 0x19
+ 429 005c 01       		.uleb128 0x1
+ 430 005d 13       		.uleb128 0x13
+ 431 005e 00       		.byte	0
+ 432 005f 00       		.byte	0
+ 433 0060 08       		.uleb128 0x8
+ 434 0061 898201   		.uleb128 0x4109
+ 435 0064 01       		.byte	0x1
+ 436 0065 11       		.uleb128 0x11
+ 437 0066 01       		.uleb128 0x1
+ 438 0067 31       		.uleb128 0x31
+ 439 0068 13       		.uleb128 0x13
+ 440 0069 00       		.byte	0
+ 441 006a 00       		.byte	0
+ 442 006b 09       		.uleb128 0x9
+ 443 006c 8A8201   		.uleb128 0x410a
+ 444 006f 00       		.byte	0
+ 445 0070 02       		.uleb128 0x2
+ 446 0071 18       		.uleb128 0x18
+ 447 0072 9142     		.uleb128 0x2111
+ 448 0074 18       		.uleb128 0x18
+ 449 0075 00       		.byte	0
+ 450 0076 00       		.byte	0
+ 451 0077 0A       		.uleb128 0xa
+ 452 0078 2E       		.uleb128 0x2e
+ 453 0079 01       		.byte	0x1
+ 454 007a 3F       		.uleb128 0x3f
+ 455 007b 19       		.uleb128 0x19
+ 456 007c 03       		.uleb128 0x3
+ 457 007d 0E       		.uleb128 0xe
+ 458 007e 3A       		.uleb128 0x3a
+ 459 007f 0B       		.uleb128 0xb
+ 460 0080 3B       		.uleb128 0x3b
+ 461 0081 0B       		.uleb128 0xb
+ 462 0082 49       		.uleb128 0x49
+ 463 0083 13       		.uleb128 0x13
+ 464 0084 11       		.uleb128 0x11
+ 465 0085 01       		.uleb128 0x1
+ 466 0086 12       		.uleb128 0x12
+ 467 0087 06       		.uleb128 0x6
+ 468 0088 40       		.uleb128 0x40
+ 469 0089 18       		.uleb128 0x18
+ 470 008a 9742     		.uleb128 0x2117
+ 471 008c 19       		.uleb128 0x19
+ 472 008d 01       		.uleb128 0x1
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 10
+
+
+ 473 008e 13       		.uleb128 0x13
+ 474 008f 00       		.byte	0
+ 475 0090 00       		.byte	0
+ 476 0091 0B       		.uleb128 0xb
+ 477 0092 898201   		.uleb128 0x4109
+ 478 0095 00       		.byte	0
+ 479 0096 11       		.uleb128 0x11
+ 480 0097 01       		.uleb128 0x1
+ 481 0098 31       		.uleb128 0x31
+ 482 0099 13       		.uleb128 0x13
+ 483 009a 00       		.byte	0
+ 484 009b 00       		.byte	0
+ 485 009c 0C       		.uleb128 0xc
+ 486 009d 898201   		.uleb128 0x4109
+ 487 00a0 01       		.byte	0x1
+ 488 00a1 11       		.uleb128 0x11
+ 489 00a2 01       		.uleb128 0x1
+ 490 00a3 31       		.uleb128 0x31
+ 491 00a4 13       		.uleb128 0x13
+ 492 00a5 01       		.uleb128 0x1
+ 493 00a6 13       		.uleb128 0x13
+ 494 00a7 00       		.byte	0
+ 495 00a8 00       		.byte	0
+ 496 00a9 0D       		.uleb128 0xd
+ 497 00aa 2E       		.uleb128 0x2e
+ 498 00ab 01       		.byte	0x1
+ 499 00ac 3F       		.uleb128 0x3f
+ 500 00ad 19       		.uleb128 0x19
+ 501 00ae 03       		.uleb128 0x3
+ 502 00af 0E       		.uleb128 0xe
+ 503 00b0 3A       		.uleb128 0x3a
+ 504 00b1 0B       		.uleb128 0xb
+ 505 00b2 3B       		.uleb128 0x3b
+ 506 00b3 05       		.uleb128 0x5
+ 507 00b4 27       		.uleb128 0x27
+ 508 00b5 19       		.uleb128 0x19
+ 509 00b6 3C       		.uleb128 0x3c
+ 510 00b7 19       		.uleb128 0x19
+ 511 00b8 01       		.uleb128 0x1
+ 512 00b9 13       		.uleb128 0x13
+ 513 00ba 00       		.byte	0
+ 514 00bb 00       		.byte	0
+ 515 00bc 0E       		.uleb128 0xe
+ 516 00bd 05       		.uleb128 0x5
+ 517 00be 00       		.byte	0
+ 518 00bf 49       		.uleb128 0x49
+ 519 00c0 13       		.uleb128 0x13
+ 520 00c1 00       		.byte	0
+ 521 00c2 00       		.byte	0
+ 522 00c3 0F       		.uleb128 0xf
+ 523 00c4 2E       		.uleb128 0x2e
+ 524 00c5 00       		.byte	0
+ 525 00c6 3F       		.uleb128 0x3f
+ 526 00c7 19       		.uleb128 0x19
+ 527 00c8 03       		.uleb128 0x3
+ 528 00c9 0E       		.uleb128 0xe
+ 529 00ca 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 11
+
+
+ 530 00cb 0B       		.uleb128 0xb
+ 531 00cc 3B       		.uleb128 0x3b
+ 532 00cd 0B       		.uleb128 0xb
+ 533 00ce 27       		.uleb128 0x27
+ 534 00cf 19       		.uleb128 0x19
+ 535 00d0 3C       		.uleb128 0x3c
+ 536 00d1 19       		.uleb128 0x19
+ 537 00d2 00       		.byte	0
+ 538 00d3 00       		.byte	0
+ 539 00d4 10       		.uleb128 0x10
+ 540 00d5 2E       		.uleb128 0x2e
+ 541 00d6 01       		.byte	0x1
+ 542 00d7 3F       		.uleb128 0x3f
+ 543 00d8 19       		.uleb128 0x19
+ 544 00d9 03       		.uleb128 0x3
+ 545 00da 0E       		.uleb128 0xe
+ 546 00db 3A       		.uleb128 0x3a
+ 547 00dc 0B       		.uleb128 0xb
+ 548 00dd 3B       		.uleb128 0x3b
+ 549 00de 0B       		.uleb128 0xb
+ 550 00df 27       		.uleb128 0x27
+ 551 00e0 19       		.uleb128 0x19
+ 552 00e1 3C       		.uleb128 0x3c
+ 553 00e2 19       		.uleb128 0x19
+ 554 00e3 01       		.uleb128 0x1
+ 555 00e4 13       		.uleb128 0x13
+ 556 00e5 00       		.byte	0
+ 557 00e6 00       		.byte	0
+ 558 00e7 11       		.uleb128 0x11
+ 559 00e8 26       		.uleb128 0x26
+ 560 00e9 00       		.byte	0
+ 561 00ea 49       		.uleb128 0x49
+ 562 00eb 13       		.uleb128 0x13
+ 563 00ec 00       		.byte	0
+ 564 00ed 00       		.byte	0
+ 565 00ee 12       		.uleb128 0x12
+ 566 00ef 2E       		.uleb128 0x2e
+ 567 00f0 00       		.byte	0
+ 568 00f1 3F       		.uleb128 0x3f
+ 569 00f2 19       		.uleb128 0x19
+ 570 00f3 03       		.uleb128 0x3
+ 571 00f4 0E       		.uleb128 0xe
+ 572 00f5 3A       		.uleb128 0x3a
+ 573 00f6 0B       		.uleb128 0xb
+ 574 00f7 3B       		.uleb128 0x3b
+ 575 00f8 05       		.uleb128 0x5
+ 576 00f9 27       		.uleb128 0x27
+ 577 00fa 19       		.uleb128 0x19
+ 578 00fb 3C       		.uleb128 0x3c
+ 579 00fc 19       		.uleb128 0x19
+ 580 00fd 00       		.byte	0
+ 581 00fe 00       		.byte	0
+ 582 00ff 00       		.byte	0
+ 583              		.section	.debug_aranges,"",%progbits
+ 584 0000 24000000 		.4byte	0x24
+ 585 0004 0200     		.2byte	0x2
+ 586 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 12
+
+
+ 587 000a 04       		.byte	0x4
+ 588 000b 00       		.byte	0
+ 589 000c 0000     		.2byte	0
+ 590 000e 0000     		.2byte	0
+ 591 0010 00000000 		.4byte	.LFB34
+ 592 0014 0A000000 		.4byte	.LFE34-.LFB34
+ 593 0018 00000000 		.4byte	.LFB35
+ 594 001c 3C000000 		.4byte	.LFE35-.LFB35
+ 595 0020 00000000 		.4byte	0
+ 596 0024 00000000 		.4byte	0
+ 597              		.section	.debug_ranges,"",%progbits
+ 598              	.Ldebug_ranges0:
+ 599 0000 00000000 		.4byte	.LFB34
+ 600 0004 0A000000 		.4byte	.LFE34
+ 601 0008 00000000 		.4byte	.LFB35
+ 602 000c 3C000000 		.4byte	.LFE35
+ 603 0010 00000000 		.4byte	0
+ 604 0014 00000000 		.4byte	0
+ 605              		.section	.debug_line,"",%progbits
+ 606              	.Ldebug_line0:
+ 607 0000 D6000000 		.section	.debug_str,"MS",%progbits,1
+ 607      02008F00 
+ 607      00000201 
+ 607      FB0E0D00 
+ 607      01010101 
+ 608              	.LASF6:
+ 609 0000 6C6F6E67 		.ascii	"long long int\000"
+ 609      206C6F6E 
+ 609      6720696E 
+ 609      7400
+ 610              	.LASF11:
+ 611 000e 75696E74 		.ascii	"uint32\000"
+ 611      333200
+ 612              	.LASF23:
+ 613 0015 54696D65 		.ascii	"Timer_Start\000"
+ 613      725F5374 
+ 613      61727400 
+ 614              	.LASF8:
+ 615 0021 756E7369 		.ascii	"unsigned int\000"
+ 615      676E6564 
+ 615      20696E74 
+ 615      00
+ 616              	.LASF17:
+ 617 002e 6D61696E 		.ascii	"main\000"
+ 617      00
+ 618              	.LASF27:
+ 619 0033 433A5C55 		.ascii	"C:\\Users\\cdc75\\Desktop\\Labs\\Lesson16.cydsn\000"
+ 619      73657273 
+ 619      5C636463 
+ 619      37355C44 
+ 619      65736B74 
+ 620              	.LASF19:
+ 621 005e 54696D65 		.ascii	"Timer_Int_StartEx\000"
+ 621      725F496E 
+ 621      745F5374 
+ 621      61727445 
+ 621      7800
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 13
+
+
+ 622              	.LASF20:
+ 623 0070 43794465 		.ascii	"CyDelay\000"
+ 623      6C617900 
+ 624              	.LASF5:
+ 625 0078 6C6F6E67 		.ascii	"long unsigned int\000"
+ 625      20756E73 
+ 625      69676E65 
+ 625      6420696E 
+ 625      7400
+ 626              	.LASF7:
+ 627 008a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 627      206C6F6E 
+ 627      6720756E 
+ 627      7369676E 
+ 627      65642069 
+ 628              	.LASF9:
+ 629 00a1 666C6F61 		.ascii	"float\000"
+ 629      7400
+ 630              	.LASF22:
+ 631 00a7 55415254 		.ascii	"UART_Start\000"
+ 631      5F537461 
+ 631      727400
+ 632              	.LASF1:
+ 633 00b2 756E7369 		.ascii	"unsigned char\000"
+ 633      676E6564 
+ 633      20636861 
+ 633      7200
+ 634              	.LASF13:
+ 635 00c0 63686172 		.ascii	"char\000"
+ 635      00
+ 636              	.LASF4:
+ 637 00c5 6C6F6E67 		.ascii	"long int\000"
+ 637      20696E74 
+ 637      00
+ 638              	.LASF14:
+ 639 00ce 63796973 		.ascii	"cyisraddress\000"
+ 639      72616464 
+ 639      72657373 
+ 639      00
+ 640              	.LASF2:
+ 641 00db 73686F72 		.ascii	"short int\000"
+ 641      7420696E 
+ 641      7400
+ 642              	.LASF10:
+ 643 00e5 646F7562 		.ascii	"double\000"
+ 643      6C6500
+ 644              	.LASF3:
+ 645 00ec 73686F72 		.ascii	"short unsigned int\000"
+ 645      7420756E 
+ 645      7369676E 
+ 645      65642069 
+ 645      6E7400
+ 646              	.LASF0:
+ 647 00ff 7369676E 		.ascii	"signed char\000"
+ 647      65642063 
+ 647      68617200 
+ 648              	.LASF24:
+ARM GAS  C:\Users\cdc75\AppData\Local\Temp\ccFOrxS5.s 			page 14
+
+
+ 649 010b 43795379 		.ascii	"CySysPmSleep\000"
+ 649      73506D53 
+ 649      6C656570 
+ 649      00
+ 650              	.LASF18:
+ 651 0118 54696D65 		.ascii	"Timer_ClearInterrupt\000"
+ 651      725F436C 
+ 651      65617249 
+ 651      6E746572 
+ 651      72757074 
+ 652              	.LASF25:
+ 653 012d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 653      4320342E 
+ 653      392E3320 
+ 653      32303135 
+ 653      30333033 
+ 654 0160 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 654      20726576 
+ 654      6973696F 
+ 654      6E203232 
+ 654      31323230 
+ 655 0193 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 655      66756E63 
+ 655      74696F6E 
+ 655      2D736563 
+ 655      74696F6E 
+ 656              	.LASF26:
+ 657 01bb 2E5C6D61 		.ascii	".\\main.c\000"
+ 657      696E2E63 
+ 657      00
+ 658              	.LASF21:
+ 659 01c4 55415254 		.ascii	"UART_UartPutString\000"
+ 659      5F556172 
+ 659      74507574 
+ 659      53747269 
+ 659      6E6700
+ 660              	.LASF15:
+ 661 01d7 73697A65 		.ascii	"sizetype\000"
+ 661      74797065 
+ 661      00
+ 662              	.LASF16:
+ 663 01e0 54696D65 		.ascii	"Timer_Int_Handler\000"
+ 663      725F496E 
+ 663      745F4861 
+ 663      6E646C65 
+ 663      7200
+ 664              	.LASF12:
+ 665 01f2 63686172 		.ascii	"char8\000"
+ 665      3800
+ 666              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

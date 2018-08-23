@@ -1,0 +1,1000 @@
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB34:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #include <stdio.h>
+  14:.\main.c      **** 
+  15:.\main.c      **** int main()
+  16:.\main.c      **** {   
+  26              		.loc 1 16 0
+  27              		.cfi_startproc
+  28 0000 38B5     		push	{r3, r4, r5, lr}
+  29              		.cfi_def_cfa_offset 16
+  30              		.cfi_offset 3, -16
+  31              		.cfi_offset 4, -12
+  32              		.cfi_offset 5, -8
+  33              		.cfi_offset 14, -4
+  17:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  34              		.loc 1 17 0
+  35              	@ 17 ".\main.c" 1
+  36 0002 62B6     		CPSIE   i
+  37              	@ 0 "" 2
+  18:.\main.c      ****     UART_Start();
+  38              		.loc 1 18 0
+  39              		.code	16
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 2
+
+
+  40 0004 FFF7FEFF 		bl	UART_Start
+  41              	.LVL0:
+  19:.\main.c      ****     CapSense_Start();
+  42              		.loc 1 19 0
+  43 0008 FFF7FEFF 		bl	CapSense_Start
+  44              	.LVL1:
+  20:.\main.c      ****     CapSense_InitializeAllBaselines();
+  45              		.loc 1 20 0
+  46 000c FFF7FEFF 		bl	CapSense_InitializeAllBaselines
+  47              	.LVL2:
+  21:.\main.c      ****     CapSense_ScanEnabledWidgets();
+  48              		.loc 1 21 0
+  49 0010 FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
+  50              	.LVL3:
+  22:.\main.c      ****     int tpress=0,bpress=0;
+  51              		.loc 1 22 0
+  52 0014 0025     		mov	r5, #0
+  53 0016 0024     		mov	r4, #0
+  54              	.LVL4:
+  55              	.L2:
+  23:.\main.c      ****     
+  24:.\main.c      ****     for(;;)
+  25:.\main.c      ****     {   
+  26:.\main.c      ****         if (!CapSense_IsBusy())
+  56              		.loc 1 26 0
+  57 0018 FFF7FEFF 		bl	CapSense_IsBusy
+  58              	.LVL5:
+  59 001c 0028     		cmp	r0, #0
+  60 001e FBD1     		bne	.L2
+  27:.\main.c      ****         { 
+  28:.\main.c      ****             if (CapSense_CheckIsSensorActive(CapSense_SENSOR_BUTTON0__BTN))
+  61              		.loc 1 28 0
+  62 0020 FFF7FEFF 		bl	CapSense_CheckIsSensorActive
+  63              	.LVL6:
+  64 0024 0028     		cmp	r0, #0
+  65 0026 05D0     		beq	.L3
+  29:.\main.c      ****             {
+  30:.\main.c      ****                 if (tpress==0)
+  66              		.loc 1 30 0
+  67 0028 002C     		cmp	r4, #0
+  68 002a 03D1     		bne	.L3
+  31:.\main.c      ****                 {
+  32:.\main.c      ****                    UART_UartPutString("Top Button Pressed!\r\n");  
+  69              		.loc 1 32 0
+  70 002c 1448     		ldr	r0, .L8
+  71 002e FFF7FEFF 		bl	UART_UartPutString
+  72              	.LVL7:
+  33:.\main.c      ****                    tpress=1;
+  73              		.loc 1 33 0
+  74 0032 0134     		add	r4, r4, #1
+  75              	.LVL8:
+  76              	.L3:
+  34:.\main.c      ****                 }
+  35:.\main.c      ****             }
+  36:.\main.c      ****             
+  37:.\main.c      ****             if (! CapSense_CheckIsSensorActive(CapSense_SENSOR_BUTTON0__BTN) && tpress==1)
+  77              		.loc 1 37 0
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 3
+
+
+  78 0034 0020     		mov	r0, #0
+  79 0036 FFF7FEFF 		bl	CapSense_CheckIsSensorActive
+  80              	.LVL9:
+  81 003a 0028     		cmp	r0, #0
+  82 003c 05D1     		bne	.L4
+  83              		.loc 1 37 0 is_stmt 0 discriminator 1
+  84 003e 012C     		cmp	r4, #1
+  85 0040 03D1     		bne	.L4
+  38:.\main.c      ****             {
+  39:.\main.c      ****                 UART_UartPutString("Top Button Released!\r\n");
+  86              		.loc 1 39 0 is_stmt 1
+  87 0042 1048     		ldr	r0, .L8+4
+  88 0044 FFF7FEFF 		bl	UART_UartPutString
+  89              	.LVL10:
+  40:.\main.c      ****                 tpress=0;
+  90              		.loc 1 40 0
+  91 0048 0024     		mov	r4, #0
+  92              	.LVL11:
+  93              	.L4:
+  41:.\main.c      ****             }
+  42:.\main.c      ****             
+  43:.\main.c      ****             if (CapSense_CheckIsSensorActive(CapSense_SENSOR_BUTTON1__BTN))
+  94              		.loc 1 43 0
+  95 004a 0120     		mov	r0, #1
+  96 004c FFF7FEFF 		bl	CapSense_CheckIsSensorActive
+  97              	.LVL12:
+  98 0050 0028     		cmp	r0, #0
+  99 0052 05D0     		beq	.L5
+  44:.\main.c      ****             {
+  45:.\main.c      ****                 if (bpress==0)
+ 100              		.loc 1 45 0
+ 101 0054 002D     		cmp	r5, #0
+ 102 0056 03D1     		bne	.L5
+  46:.\main.c      ****                 {
+  47:.\main.c      ****                    UART_UartPutString("Bottom Button Pressed!\r\n");  
+ 103              		.loc 1 47 0
+ 104 0058 0B48     		ldr	r0, .L8+8
+ 105 005a FFF7FEFF 		bl	UART_UartPutString
+ 106              	.LVL13:
+  48:.\main.c      ****                    bpress=1;
+ 107              		.loc 1 48 0
+ 108 005e 0135     		add	r5, r5, #1
+ 109              	.LVL14:
+ 110              	.L5:
+  49:.\main.c      ****                 }
+  50:.\main.c      ****             }
+  51:.\main.c      ****             
+  52:.\main.c      ****             if (! CapSense_CheckIsSensorActive(CapSense_SENSOR_BUTTON1__BTN) && bpress==1)
+ 111              		.loc 1 52 0
+ 112 0060 0120     		mov	r0, #1
+ 113 0062 FFF7FEFF 		bl	CapSense_CheckIsSensorActive
+ 114              	.LVL15:
+ 115 0066 0028     		cmp	r0, #0
+ 116 0068 05D1     		bne	.L6
+ 117              		.loc 1 52 0 is_stmt 0 discriminator 1
+ 118 006a 012D     		cmp	r5, #1
+ 119 006c 03D1     		bne	.L6
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 4
+
+
+  53:.\main.c      ****             {
+  54:.\main.c      ****                 UART_UartPutString("Bottom Button Released!\r\n");
+ 120              		.loc 1 54 0 is_stmt 1
+ 121 006e 0748     		ldr	r0, .L8+12
+ 122 0070 FFF7FEFF 		bl	UART_UartPutString
+ 123              	.LVL16:
+  55:.\main.c      ****                 bpress=0;
+ 124              		.loc 1 55 0
+ 125 0074 0025     		mov	r5, #0
+ 126              	.LVL17:
+ 127              	.L6:
+  56:.\main.c      ****             }
+  57:.\main.c      ****             
+  58:.\main.c      ****             CapSense_UpdateEnabledBaselines();
+ 128              		.loc 1 58 0
+ 129 0076 FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
+ 130              	.LVL18:
+  59:.\main.c      ****             CapSense_ScanEnabledWidgets();
+ 131              		.loc 1 59 0
+ 132 007a FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
+ 133              	.LVL19:
+ 134 007e CBE7     		b	.L2
+ 135              	.L9:
+ 136              		.align	2
+ 137              	.L8:
+ 138 0080 00000000 		.word	.LC0
+ 139 0084 18000000 		.word	.LC2
+ 140 0088 30000000 		.word	.LC4
+ 141 008c 4C000000 		.word	.LC6
+ 142              		.cfi_endproc
+ 143              	.LFE34:
+ 144              		.size	main, .-main
+ 145              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 146              		.align	2
+ 147              	.LC0:
+ 148 0000 546F7020 		.ascii	"Top Button Pressed!\015\012\000"
+ 148      42757474 
+ 148      6F6E2050 
+ 148      72657373 
+ 148      6564210D 
+ 149 0016 0000     		.space	2
+ 150              	.LC2:
+ 151 0018 546F7020 		.ascii	"Top Button Released!\015\012\000"
+ 151      42757474 
+ 151      6F6E2052 
+ 151      656C6561 
+ 151      73656421 
+ 152 002f 00       		.space	1
+ 153              	.LC4:
+ 154 0030 426F7474 		.ascii	"Bottom Button Pressed!\015\012\000"
+ 154      6F6D2042 
+ 154      7574746F 
+ 154      6E205072 
+ 154      65737365 
+ 155 0049 000000   		.space	3
+ 156              	.LC6:
+ 157 004c 426F7474 		.ascii	"Bottom Button Released!\015\012\000"
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 5
+
+
+ 157      6F6D2042 
+ 157      7574746F 
+ 157      6E205265 
+ 157      6C656173 
+ 158 0066 0000     		.text
+ 159              	.Letext0:
+ 160              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 161              		.file 3 "Generated_Source\\PSoC4/UART.h"
+ 162              		.file 4 "Generated_Source\\PSoC4/CapSense.h"
+ 163              		.file 5 "Generated_Source\\PSoC4/CapSense_CSHL.h"
+ 164              		.file 6 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 165              		.section	.debug_info,"",%progbits
+ 166              	.Ldebug_info0:
+ 167 0000 11020000 		.4byte	0x211
+ 168 0004 0400     		.2byte	0x4
+ 169 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 170 000a 04       		.byte	0x4
+ 171 000b 01       		.uleb128 0x1
+ 172 000c 9D000000 		.4byte	.LASF22
+ 173 0010 01       		.byte	0x1
+ 174 0011 77000000 		.4byte	.LASF23
+ 175 0015 22000000 		.4byte	.LASF24
+ 176 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 177 001d 00000000 		.4byte	0
+ 178 0021 00000000 		.4byte	.Ldebug_line0
+ 179 0025 02       		.uleb128 0x2
+ 180 0026 01       		.byte	0x1
+ 181 0027 06       		.byte	0x6
+ 182 0028 D3010000 		.4byte	.LASF0
+ 183 002c 02       		.uleb128 0x2
+ 184 002d 01       		.byte	0x1
+ 185 002e 08       		.byte	0x8
+ 186 002f 56010000 		.4byte	.LASF1
+ 187 0033 02       		.uleb128 0x2
+ 188 0034 02       		.byte	0x2
+ 189 0035 05       		.byte	0x5
+ 190 0036 72010000 		.4byte	.LASF2
+ 191 003a 02       		.uleb128 0x2
+ 192 003b 02       		.byte	0x2
+ 193 003c 07       		.byte	0x7
+ 194 003d C0010000 		.4byte	.LASF3
+ 195 0041 02       		.uleb128 0x2
+ 196 0042 04       		.byte	0x4
+ 197 0043 05       		.byte	0x5
+ 198 0044 69010000 		.4byte	.LASF4
+ 199 0048 02       		.uleb128 0x2
+ 200 0049 04       		.byte	0x4
+ 201 004a 07       		.byte	0x7
+ 202 004b 65000000 		.4byte	.LASF5
+ 203 004f 02       		.uleb128 0x2
+ 204 0050 08       		.byte	0x8
+ 205 0051 05       		.byte	0x5
+ 206 0052 00000000 		.4byte	.LASF6
+ 207 0056 02       		.uleb128 0x2
+ 208 0057 08       		.byte	0x8
+ 209 0058 07       		.byte	0x7
+ 210 0059 80000000 		.4byte	.LASF7
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 6
+
+
+ 211 005d 03       		.uleb128 0x3
+ 212 005e 04       		.byte	0x4
+ 213 005f 05       		.byte	0x5
+ 214 0060 696E7400 		.ascii	"int\000"
+ 215 0064 02       		.uleb128 0x2
+ 216 0065 04       		.byte	0x4
+ 217 0066 07       		.byte	0x7
+ 218 0067 15000000 		.4byte	.LASF8
+ 219 006b 04       		.uleb128 0x4
+ 220 006c 0E000000 		.4byte	.LASF11
+ 221 0070 02       		.byte	0x2
+ 222 0071 9A01     		.2byte	0x19a
+ 223 0073 48000000 		.4byte	0x48
+ 224 0077 02       		.uleb128 0x2
+ 225 0078 04       		.byte	0x4
+ 226 0079 04       		.byte	0x4
+ 227 007a FE010000 		.4byte	.LASF9
+ 228 007e 02       		.uleb128 0x2
+ 229 007f 08       		.byte	0x8
+ 230 0080 04       		.byte	0x4
+ 231 0081 99010000 		.4byte	.LASF10
+ 232 0085 04       		.uleb128 0x4
+ 233 0086 97000000 		.4byte	.LASF12
+ 234 008a 02       		.byte	0x2
+ 235 008b A901     		.2byte	0x1a9
+ 236 008d 91000000 		.4byte	0x91
+ 237 0091 02       		.uleb128 0x2
+ 238 0092 01       		.byte	0x1
+ 239 0093 08       		.byte	0x8
+ 240 0094 64010000 		.4byte	.LASF13
+ 241 0098 02       		.uleb128 0x2
+ 242 0099 04       		.byte	0x4
+ 243 009a 07       		.byte	0x7
+ 244 009b 1E020000 		.4byte	.LASF14
+ 245 009f 05       		.uleb128 0x5
+ 246 00a0 60000000 		.4byte	.LASF25
+ 247 00a4 01       		.byte	0x1
+ 248 00a5 0F       		.byte	0xf
+ 249 00a6 5D000000 		.4byte	0x5d
+ 250 00aa 00000000 		.4byte	.LFB34
+ 251 00ae 90000000 		.4byte	.LFE34-.LFB34
+ 252 00b2 01       		.uleb128 0x1
+ 253 00b3 9C       		.byte	0x9c
+ 254 00b4 B4010000 		.4byte	0x1b4
+ 255 00b8 06       		.uleb128 0x6
+ 256 00b9 04020000 		.4byte	.LASF15
+ 257 00bd 01       		.byte	0x1
+ 258 00be 16       		.byte	0x16
+ 259 00bf 5D000000 		.4byte	0x5d
+ 260 00c3 00000000 		.4byte	.LLST0
+ 261 00c7 06       		.uleb128 0x6
+ 262 00c8 43020000 		.4byte	.LASF16
+ 263 00cc 01       		.byte	0x1
+ 264 00cd 16       		.byte	0x16
+ 265 00ce 5D000000 		.4byte	0x5d
+ 266 00d2 4D000000 		.4byte	.LLST1
+ 267 00d6 07       		.uleb128 0x7
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 7
+
+
+ 268 00d7 08000000 		.4byte	.LVL0
+ 269 00db B4010000 		.4byte	0x1b4
+ 270 00df 07       		.uleb128 0x7
+ 271 00e0 0C000000 		.4byte	.LVL1
+ 272 00e4 BB010000 		.4byte	0x1bb
+ 273 00e8 07       		.uleb128 0x7
+ 274 00e9 10000000 		.4byte	.LVL2
+ 275 00ed C2010000 		.4byte	0x1c2
+ 276 00f1 07       		.uleb128 0x7
+ 277 00f2 14000000 		.4byte	.LVL3
+ 278 00f6 C9010000 		.4byte	0x1c9
+ 279 00fa 07       		.uleb128 0x7
+ 280 00fb 1C000000 		.4byte	.LVL5
+ 281 00ff D0010000 		.4byte	0x1d0
+ 282 0103 07       		.uleb128 0x7
+ 283 0104 24000000 		.4byte	.LVL6
+ 284 0108 DB010000 		.4byte	0x1db
+ 285 010c 08       		.uleb128 0x8
+ 286 010d 32000000 		.4byte	.LVL7
+ 287 0111 F0010000 		.4byte	0x1f0
+ 288 0115 23010000 		.4byte	0x123
+ 289 0119 09       		.uleb128 0x9
+ 290 011a 01       		.uleb128 0x1
+ 291 011b 50       		.byte	0x50
+ 292 011c 05       		.uleb128 0x5
+ 293 011d 03       		.byte	0x3
+ 294 011e 00000000 		.4byte	.LC0
+ 295 0122 00       		.byte	0
+ 296 0123 08       		.uleb128 0x8
+ 297 0124 3A000000 		.4byte	.LVL9
+ 298 0128 DB010000 		.4byte	0x1db
+ 299 012c 36010000 		.4byte	0x136
+ 300 0130 09       		.uleb128 0x9
+ 301 0131 01       		.uleb128 0x1
+ 302 0132 50       		.byte	0x50
+ 303 0133 01       		.uleb128 0x1
+ 304 0134 30       		.byte	0x30
+ 305 0135 00       		.byte	0
+ 306 0136 08       		.uleb128 0x8
+ 307 0137 48000000 		.4byte	.LVL10
+ 308 013b F0010000 		.4byte	0x1f0
+ 309 013f 4D010000 		.4byte	0x14d
+ 310 0143 09       		.uleb128 0x9
+ 311 0144 01       		.uleb128 0x1
+ 312 0145 50       		.byte	0x50
+ 313 0146 05       		.uleb128 0x5
+ 314 0147 03       		.byte	0x3
+ 315 0148 18000000 		.4byte	.LC2
+ 316 014c 00       		.byte	0
+ 317 014d 08       		.uleb128 0x8
+ 318 014e 50000000 		.4byte	.LVL12
+ 319 0152 DB010000 		.4byte	0x1db
+ 320 0156 60010000 		.4byte	0x160
+ 321 015a 09       		.uleb128 0x9
+ 322 015b 01       		.uleb128 0x1
+ 323 015c 50       		.byte	0x50
+ 324 015d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 8
+
+
+ 325 015e 31       		.byte	0x31
+ 326 015f 00       		.byte	0
+ 327 0160 08       		.uleb128 0x8
+ 328 0161 5E000000 		.4byte	.LVL13
+ 329 0165 F0010000 		.4byte	0x1f0
+ 330 0169 77010000 		.4byte	0x177
+ 331 016d 09       		.uleb128 0x9
+ 332 016e 01       		.uleb128 0x1
+ 333 016f 50       		.byte	0x50
+ 334 0170 05       		.uleb128 0x5
+ 335 0171 03       		.byte	0x3
+ 336 0172 30000000 		.4byte	.LC4
+ 337 0176 00       		.byte	0
+ 338 0177 08       		.uleb128 0x8
+ 339 0178 66000000 		.4byte	.LVL15
+ 340 017c DB010000 		.4byte	0x1db
+ 341 0180 8A010000 		.4byte	0x18a
+ 342 0184 09       		.uleb128 0x9
+ 343 0185 01       		.uleb128 0x1
+ 344 0186 50       		.byte	0x50
+ 345 0187 01       		.uleb128 0x1
+ 346 0188 31       		.byte	0x31
+ 347 0189 00       		.byte	0
+ 348 018a 08       		.uleb128 0x8
+ 349 018b 74000000 		.4byte	.LVL16
+ 350 018f F0010000 		.4byte	0x1f0
+ 351 0193 A1010000 		.4byte	0x1a1
+ 352 0197 09       		.uleb128 0x9
+ 353 0198 01       		.uleb128 0x1
+ 354 0199 50       		.byte	0x50
+ 355 019a 05       		.uleb128 0x5
+ 356 019b 03       		.byte	0x3
+ 357 019c 4C000000 		.4byte	.LC6
+ 358 01a0 00       		.byte	0
+ 359 01a1 07       		.uleb128 0x7
+ 360 01a2 7A000000 		.4byte	.LVL18
+ 361 01a6 0D020000 		.4byte	0x20d
+ 362 01aa 07       		.uleb128 0x7
+ 363 01ab 7E000000 		.4byte	.LVL19
+ 364 01af C9010000 		.4byte	0x1c9
+ 365 01b3 00       		.byte	0
+ 366 01b4 0A       		.uleb128 0xa
+ 367 01b5 2B010000 		.4byte	.LASF17
+ 368 01b9 03       		.byte	0x3
+ 369 01ba 6E       		.byte	0x6e
+ 370 01bb 0A       		.uleb128 0xa
+ 371 01bc EF010000 		.4byte	.LASF18
+ 372 01c0 04       		.byte	0x4
+ 373 01c1 96       		.byte	0x96
+ 374 01c2 0A       		.uleb128 0xa
+ 375 01c3 36010000 		.4byte	.LASF19
+ 376 01c7 05       		.byte	0x5
+ 377 01c8 AC       		.byte	0xac
+ 378 01c9 0A       		.uleb128 0xa
+ 379 01ca 27020000 		.4byte	.LASF20
+ 380 01ce 04       		.byte	0x4
+ 381 01cf 9F       		.byte	0x9f
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 9
+
+
+ 382 01d0 0B       		.uleb128 0xb
+ 383 01d1 DF010000 		.4byte	.LASF26
+ 384 01d5 04       		.byte	0x4
+ 385 01d6 9C       		.byte	0x9c
+ 386 01d7 6B000000 		.4byte	0x6b
+ 387 01db 0C       		.uleb128 0xc
+ 388 01dc 7C010000 		.4byte	.LASF27
+ 389 01e0 05       		.byte	0x5
+ 390 01e1 D6       		.byte	0xd6
+ 391 01e2 6B000000 		.4byte	0x6b
+ 392 01e6 F0010000 		.4byte	0x1f0
+ 393 01ea 0D       		.uleb128 0xd
+ 394 01eb 6B000000 		.4byte	0x6b
+ 395 01ef 00       		.byte	0
+ 396 01f0 0E       		.uleb128 0xe
+ 397 01f1 0B020000 		.4byte	.LASF28
+ 398 01f5 06       		.byte	0x6
+ 399 01f6 2103     		.2byte	0x321
+ 400 01f8 02020000 		.4byte	0x202
+ 401 01fc 0D       		.uleb128 0xd
+ 402 01fd 02020000 		.4byte	0x202
+ 403 0201 00       		.byte	0
+ 404 0202 0F       		.uleb128 0xf
+ 405 0203 04       		.byte	0x4
+ 406 0204 08020000 		.4byte	0x208
+ 407 0208 10       		.uleb128 0x10
+ 408 0209 85000000 		.4byte	0x85
+ 409 020d 0A       		.uleb128 0xa
+ 410 020e A0010000 		.4byte	.LASF21
+ 411 0212 05       		.byte	0x5
+ 412 0213 B0       		.byte	0xb0
+ 413 0214 00       		.byte	0
+ 414              		.section	.debug_abbrev,"",%progbits
+ 415              	.Ldebug_abbrev0:
+ 416 0000 01       		.uleb128 0x1
+ 417 0001 11       		.uleb128 0x11
+ 418 0002 01       		.byte	0x1
+ 419 0003 25       		.uleb128 0x25
+ 420 0004 0E       		.uleb128 0xe
+ 421 0005 13       		.uleb128 0x13
+ 422 0006 0B       		.uleb128 0xb
+ 423 0007 03       		.uleb128 0x3
+ 424 0008 0E       		.uleb128 0xe
+ 425 0009 1B       		.uleb128 0x1b
+ 426 000a 0E       		.uleb128 0xe
+ 427 000b 55       		.uleb128 0x55
+ 428 000c 17       		.uleb128 0x17
+ 429 000d 11       		.uleb128 0x11
+ 430 000e 01       		.uleb128 0x1
+ 431 000f 10       		.uleb128 0x10
+ 432 0010 17       		.uleb128 0x17
+ 433 0011 00       		.byte	0
+ 434 0012 00       		.byte	0
+ 435 0013 02       		.uleb128 0x2
+ 436 0014 24       		.uleb128 0x24
+ 437 0015 00       		.byte	0
+ 438 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 10
+
+
+ 439 0017 0B       		.uleb128 0xb
+ 440 0018 3E       		.uleb128 0x3e
+ 441 0019 0B       		.uleb128 0xb
+ 442 001a 03       		.uleb128 0x3
+ 443 001b 0E       		.uleb128 0xe
+ 444 001c 00       		.byte	0
+ 445 001d 00       		.byte	0
+ 446 001e 03       		.uleb128 0x3
+ 447 001f 24       		.uleb128 0x24
+ 448 0020 00       		.byte	0
+ 449 0021 0B       		.uleb128 0xb
+ 450 0022 0B       		.uleb128 0xb
+ 451 0023 3E       		.uleb128 0x3e
+ 452 0024 0B       		.uleb128 0xb
+ 453 0025 03       		.uleb128 0x3
+ 454 0026 08       		.uleb128 0x8
+ 455 0027 00       		.byte	0
+ 456 0028 00       		.byte	0
+ 457 0029 04       		.uleb128 0x4
+ 458 002a 16       		.uleb128 0x16
+ 459 002b 00       		.byte	0
+ 460 002c 03       		.uleb128 0x3
+ 461 002d 0E       		.uleb128 0xe
+ 462 002e 3A       		.uleb128 0x3a
+ 463 002f 0B       		.uleb128 0xb
+ 464 0030 3B       		.uleb128 0x3b
+ 465 0031 05       		.uleb128 0x5
+ 466 0032 49       		.uleb128 0x49
+ 467 0033 13       		.uleb128 0x13
+ 468 0034 00       		.byte	0
+ 469 0035 00       		.byte	0
+ 470 0036 05       		.uleb128 0x5
+ 471 0037 2E       		.uleb128 0x2e
+ 472 0038 01       		.byte	0x1
+ 473 0039 3F       		.uleb128 0x3f
+ 474 003a 19       		.uleb128 0x19
+ 475 003b 03       		.uleb128 0x3
+ 476 003c 0E       		.uleb128 0xe
+ 477 003d 3A       		.uleb128 0x3a
+ 478 003e 0B       		.uleb128 0xb
+ 479 003f 3B       		.uleb128 0x3b
+ 480 0040 0B       		.uleb128 0xb
+ 481 0041 49       		.uleb128 0x49
+ 482 0042 13       		.uleb128 0x13
+ 483 0043 11       		.uleb128 0x11
+ 484 0044 01       		.uleb128 0x1
+ 485 0045 12       		.uleb128 0x12
+ 486 0046 06       		.uleb128 0x6
+ 487 0047 40       		.uleb128 0x40
+ 488 0048 18       		.uleb128 0x18
+ 489 0049 9742     		.uleb128 0x2117
+ 490 004b 19       		.uleb128 0x19
+ 491 004c 01       		.uleb128 0x1
+ 492 004d 13       		.uleb128 0x13
+ 493 004e 00       		.byte	0
+ 494 004f 00       		.byte	0
+ 495 0050 06       		.uleb128 0x6
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 11
+
+
+ 496 0051 34       		.uleb128 0x34
+ 497 0052 00       		.byte	0
+ 498 0053 03       		.uleb128 0x3
+ 499 0054 0E       		.uleb128 0xe
+ 500 0055 3A       		.uleb128 0x3a
+ 501 0056 0B       		.uleb128 0xb
+ 502 0057 3B       		.uleb128 0x3b
+ 503 0058 0B       		.uleb128 0xb
+ 504 0059 49       		.uleb128 0x49
+ 505 005a 13       		.uleb128 0x13
+ 506 005b 02       		.uleb128 0x2
+ 507 005c 17       		.uleb128 0x17
+ 508 005d 00       		.byte	0
+ 509 005e 00       		.byte	0
+ 510 005f 07       		.uleb128 0x7
+ 511 0060 898201   		.uleb128 0x4109
+ 512 0063 00       		.byte	0
+ 513 0064 11       		.uleb128 0x11
+ 514 0065 01       		.uleb128 0x1
+ 515 0066 31       		.uleb128 0x31
+ 516 0067 13       		.uleb128 0x13
+ 517 0068 00       		.byte	0
+ 518 0069 00       		.byte	0
+ 519 006a 08       		.uleb128 0x8
+ 520 006b 898201   		.uleb128 0x4109
+ 521 006e 01       		.byte	0x1
+ 522 006f 11       		.uleb128 0x11
+ 523 0070 01       		.uleb128 0x1
+ 524 0071 31       		.uleb128 0x31
+ 525 0072 13       		.uleb128 0x13
+ 526 0073 01       		.uleb128 0x1
+ 527 0074 13       		.uleb128 0x13
+ 528 0075 00       		.byte	0
+ 529 0076 00       		.byte	0
+ 530 0077 09       		.uleb128 0x9
+ 531 0078 8A8201   		.uleb128 0x410a
+ 532 007b 00       		.byte	0
+ 533 007c 02       		.uleb128 0x2
+ 534 007d 18       		.uleb128 0x18
+ 535 007e 9142     		.uleb128 0x2111
+ 536 0080 18       		.uleb128 0x18
+ 537 0081 00       		.byte	0
+ 538 0082 00       		.byte	0
+ 539 0083 0A       		.uleb128 0xa
+ 540 0084 2E       		.uleb128 0x2e
+ 541 0085 00       		.byte	0
+ 542 0086 3F       		.uleb128 0x3f
+ 543 0087 19       		.uleb128 0x19
+ 544 0088 03       		.uleb128 0x3
+ 545 0089 0E       		.uleb128 0xe
+ 546 008a 3A       		.uleb128 0x3a
+ 547 008b 0B       		.uleb128 0xb
+ 548 008c 3B       		.uleb128 0x3b
+ 549 008d 0B       		.uleb128 0xb
+ 550 008e 27       		.uleb128 0x27
+ 551 008f 19       		.uleb128 0x19
+ 552 0090 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 12
+
+
+ 553 0091 19       		.uleb128 0x19
+ 554 0092 00       		.byte	0
+ 555 0093 00       		.byte	0
+ 556 0094 0B       		.uleb128 0xb
+ 557 0095 2E       		.uleb128 0x2e
+ 558 0096 00       		.byte	0
+ 559 0097 3F       		.uleb128 0x3f
+ 560 0098 19       		.uleb128 0x19
+ 561 0099 03       		.uleb128 0x3
+ 562 009a 0E       		.uleb128 0xe
+ 563 009b 3A       		.uleb128 0x3a
+ 564 009c 0B       		.uleb128 0xb
+ 565 009d 3B       		.uleb128 0x3b
+ 566 009e 0B       		.uleb128 0xb
+ 567 009f 27       		.uleb128 0x27
+ 568 00a0 19       		.uleb128 0x19
+ 569 00a1 49       		.uleb128 0x49
+ 570 00a2 13       		.uleb128 0x13
+ 571 00a3 3C       		.uleb128 0x3c
+ 572 00a4 19       		.uleb128 0x19
+ 573 00a5 00       		.byte	0
+ 574 00a6 00       		.byte	0
+ 575 00a7 0C       		.uleb128 0xc
+ 576 00a8 2E       		.uleb128 0x2e
+ 577 00a9 01       		.byte	0x1
+ 578 00aa 3F       		.uleb128 0x3f
+ 579 00ab 19       		.uleb128 0x19
+ 580 00ac 03       		.uleb128 0x3
+ 581 00ad 0E       		.uleb128 0xe
+ 582 00ae 3A       		.uleb128 0x3a
+ 583 00af 0B       		.uleb128 0xb
+ 584 00b0 3B       		.uleb128 0x3b
+ 585 00b1 0B       		.uleb128 0xb
+ 586 00b2 27       		.uleb128 0x27
+ 587 00b3 19       		.uleb128 0x19
+ 588 00b4 49       		.uleb128 0x49
+ 589 00b5 13       		.uleb128 0x13
+ 590 00b6 3C       		.uleb128 0x3c
+ 591 00b7 19       		.uleb128 0x19
+ 592 00b8 01       		.uleb128 0x1
+ 593 00b9 13       		.uleb128 0x13
+ 594 00ba 00       		.byte	0
+ 595 00bb 00       		.byte	0
+ 596 00bc 0D       		.uleb128 0xd
+ 597 00bd 05       		.uleb128 0x5
+ 598 00be 00       		.byte	0
+ 599 00bf 49       		.uleb128 0x49
+ 600 00c0 13       		.uleb128 0x13
+ 601 00c1 00       		.byte	0
+ 602 00c2 00       		.byte	0
+ 603 00c3 0E       		.uleb128 0xe
+ 604 00c4 2E       		.uleb128 0x2e
+ 605 00c5 01       		.byte	0x1
+ 606 00c6 3F       		.uleb128 0x3f
+ 607 00c7 19       		.uleb128 0x19
+ 608 00c8 03       		.uleb128 0x3
+ 609 00c9 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 13
+
+
+ 610 00ca 3A       		.uleb128 0x3a
+ 611 00cb 0B       		.uleb128 0xb
+ 612 00cc 3B       		.uleb128 0x3b
+ 613 00cd 05       		.uleb128 0x5
+ 614 00ce 27       		.uleb128 0x27
+ 615 00cf 19       		.uleb128 0x19
+ 616 00d0 3C       		.uleb128 0x3c
+ 617 00d1 19       		.uleb128 0x19
+ 618 00d2 01       		.uleb128 0x1
+ 619 00d3 13       		.uleb128 0x13
+ 620 00d4 00       		.byte	0
+ 621 00d5 00       		.byte	0
+ 622 00d6 0F       		.uleb128 0xf
+ 623 00d7 0F       		.uleb128 0xf
+ 624 00d8 00       		.byte	0
+ 625 00d9 0B       		.uleb128 0xb
+ 626 00da 0B       		.uleb128 0xb
+ 627 00db 49       		.uleb128 0x49
+ 628 00dc 13       		.uleb128 0x13
+ 629 00dd 00       		.byte	0
+ 630 00de 00       		.byte	0
+ 631 00df 10       		.uleb128 0x10
+ 632 00e0 26       		.uleb128 0x26
+ 633 00e1 00       		.byte	0
+ 634 00e2 49       		.uleb128 0x49
+ 635 00e3 13       		.uleb128 0x13
+ 636 00e4 00       		.byte	0
+ 637 00e5 00       		.byte	0
+ 638 00e6 00       		.byte	0
+ 639              		.section	.debug_loc,"",%progbits
+ 640              	.Ldebug_loc0:
+ 641              	.LLST0:
+ 642 0000 14000000 		.4byte	.LVL3
+ 643 0004 18000000 		.4byte	.LVL4
+ 644 0008 0200     		.2byte	0x2
+ 645 000a 30       		.byte	0x30
+ 646 000b 9F       		.byte	0x9f
+ 647 000c 18000000 		.4byte	.LVL4
+ 648 0010 32000000 		.4byte	.LVL7
+ 649 0014 0100     		.2byte	0x1
+ 650 0016 54       		.byte	0x54
+ 651 0017 32000000 		.4byte	.LVL7
+ 652 001b 34000000 		.4byte	.LVL8
+ 653 001f 0200     		.2byte	0x2
+ 654 0021 31       		.byte	0x31
+ 655 0022 9F       		.byte	0x9f
+ 656 0023 34000000 		.4byte	.LVL8
+ 657 0027 48000000 		.4byte	.LVL10
+ 658 002b 0100     		.2byte	0x1
+ 659 002d 54       		.byte	0x54
+ 660 002e 48000000 		.4byte	.LVL10
+ 661 0032 4A000000 		.4byte	.LVL11
+ 662 0036 0200     		.2byte	0x2
+ 663 0038 30       		.byte	0x30
+ 664 0039 9F       		.byte	0x9f
+ 665 003a 4A000000 		.4byte	.LVL11
+ 666 003e 90000000 		.4byte	.LFE34
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 14
+
+
+ 667 0042 0100     		.2byte	0x1
+ 668 0044 54       		.byte	0x54
+ 669 0045 00000000 		.4byte	0
+ 670 0049 00000000 		.4byte	0
+ 671              	.LLST1:
+ 672 004d 14000000 		.4byte	.LVL3
+ 673 0051 18000000 		.4byte	.LVL4
+ 674 0055 0200     		.2byte	0x2
+ 675 0057 30       		.byte	0x30
+ 676 0058 9F       		.byte	0x9f
+ 677 0059 18000000 		.4byte	.LVL4
+ 678 005d 5E000000 		.4byte	.LVL13
+ 679 0061 0100     		.2byte	0x1
+ 680 0063 55       		.byte	0x55
+ 681 0064 5E000000 		.4byte	.LVL13
+ 682 0068 60000000 		.4byte	.LVL14
+ 683 006c 0200     		.2byte	0x2
+ 684 006e 31       		.byte	0x31
+ 685 006f 9F       		.byte	0x9f
+ 686 0070 60000000 		.4byte	.LVL14
+ 687 0074 74000000 		.4byte	.LVL16
+ 688 0078 0100     		.2byte	0x1
+ 689 007a 55       		.byte	0x55
+ 690 007b 74000000 		.4byte	.LVL16
+ 691 007f 76000000 		.4byte	.LVL17
+ 692 0083 0200     		.2byte	0x2
+ 693 0085 30       		.byte	0x30
+ 694 0086 9F       		.byte	0x9f
+ 695 0087 76000000 		.4byte	.LVL17
+ 696 008b 90000000 		.4byte	.LFE34
+ 697 008f 0100     		.2byte	0x1
+ 698 0091 55       		.byte	0x55
+ 699 0092 00000000 		.4byte	0
+ 700 0096 00000000 		.4byte	0
+ 701              		.section	.debug_aranges,"",%progbits
+ 702 0000 1C000000 		.4byte	0x1c
+ 703 0004 0200     		.2byte	0x2
+ 704 0006 00000000 		.4byte	.Ldebug_info0
+ 705 000a 04       		.byte	0x4
+ 706 000b 00       		.byte	0
+ 707 000c 0000     		.2byte	0
+ 708 000e 0000     		.2byte	0
+ 709 0010 00000000 		.4byte	.LFB34
+ 710 0014 90000000 		.4byte	.LFE34-.LFB34
+ 711 0018 00000000 		.4byte	0
+ 712 001c 00000000 		.4byte	0
+ 713              		.section	.debug_ranges,"",%progbits
+ 714              	.Ldebug_ranges0:
+ 715 0000 00000000 		.4byte	.LFB34
+ 716 0004 90000000 		.4byte	.LFE34
+ 717 0008 00000000 		.4byte	0
+ 718 000c 00000000 		.4byte	0
+ 719              		.section	.debug_line,"",%progbits
+ 720              	.Ldebug_line0:
+ 721 0000 BB000000 		.section	.debug_str,"MS",%progbits,1
+ 721      02008100 
+ 721      00000201 
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 15
+
+
+ 721      FB0E0D00 
+ 721      01010101 
+ 722              	.LASF6:
+ 723 0000 6C6F6E67 		.ascii	"long long int\000"
+ 723      206C6F6E 
+ 723      6720696E 
+ 723      7400
+ 724              	.LASF11:
+ 725 000e 75696E74 		.ascii	"uint32\000"
+ 725      333200
+ 726              	.LASF8:
+ 727 0015 756E7369 		.ascii	"unsigned int\000"
+ 727      676E6564 
+ 727      20696E74 
+ 727      00
+ 728              	.LASF24:
+ 729 0022 433A5C55 		.ascii	"C:\\Users\\Chris\\Desktop\\ECEC 304\\Labs\\Lesson13"
+ 729      73657273 
+ 729      5C436872 
+ 729      69735C44 
+ 729      65736B74 
+ 730 004f 5F436861 		.ascii	"_Challenge.cydsn\000"
+ 730      6C6C656E 
+ 730      67652E63 
+ 730      7964736E 
+ 730      00
+ 731              	.LASF25:
+ 732 0060 6D61696E 		.ascii	"main\000"
+ 732      00
+ 733              	.LASF5:
+ 734 0065 6C6F6E67 		.ascii	"long unsigned int\000"
+ 734      20756E73 
+ 734      69676E65 
+ 734      6420696E 
+ 734      7400
+ 735              	.LASF23:
+ 736 0077 2E5C6D61 		.ascii	".\\main.c\000"
+ 736      696E2E63 
+ 736      00
+ 737              	.LASF7:
+ 738 0080 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 738      206C6F6E 
+ 738      6720756E 
+ 738      7369676E 
+ 738      65642069 
+ 739              	.LASF12:
+ 740 0097 63686172 		.ascii	"char8\000"
+ 740      3800
+ 741              	.LASF22:
+ 742 009d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 742      4320342E 
+ 742      392E3320 
+ 742      32303135 
+ 742      30333033 
+ 743 00d0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 743      20726576 
+ 743      6973696F 
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 16
+
+
+ 743      6E203232 
+ 743      31323230 
+ 744 0103 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 744      66756E63 
+ 744      74696F6E 
+ 744      2D736563 
+ 744      74696F6E 
+ 745              	.LASF17:
+ 746 012b 55415254 		.ascii	"UART_Start\000"
+ 746      5F537461 
+ 746      727400
+ 747              	.LASF19:
+ 748 0136 43617053 		.ascii	"CapSense_InitializeAllBaselines\000"
+ 748      656E7365 
+ 748      5F496E69 
+ 748      7469616C 
+ 748      697A6541 
+ 749              	.LASF1:
+ 750 0156 756E7369 		.ascii	"unsigned char\000"
+ 750      676E6564 
+ 750      20636861 
+ 750      7200
+ 751              	.LASF13:
+ 752 0164 63686172 		.ascii	"char\000"
+ 752      00
+ 753              	.LASF4:
+ 754 0169 6C6F6E67 		.ascii	"long int\000"
+ 754      20696E74 
+ 754      00
+ 755              	.LASF2:
+ 756 0172 73686F72 		.ascii	"short int\000"
+ 756      7420696E 
+ 756      7400
+ 757              	.LASF27:
+ 758 017c 43617053 		.ascii	"CapSense_CheckIsSensorActive\000"
+ 758      656E7365 
+ 758      5F436865 
+ 758      636B4973 
+ 758      53656E73 
+ 759              	.LASF10:
+ 760 0199 646F7562 		.ascii	"double\000"
+ 760      6C6500
+ 761              	.LASF21:
+ 762 01a0 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
+ 762      656E7365 
+ 762      5F557064 
+ 762      61746545 
+ 762      6E61626C 
+ 763              	.LASF3:
+ 764 01c0 73686F72 		.ascii	"short unsigned int\000"
+ 764      7420756E 
+ 764      7369676E 
+ 764      65642069 
+ 764      6E7400
+ 765              	.LASF0:
+ 766 01d3 7369676E 		.ascii	"signed char\000"
+ 766      65642063 
+ARM GAS  C:\Users\Chris\AppData\Local\Temp\ccfQhnL0.s 			page 17
+
+
+ 766      68617200 
+ 767              	.LASF26:
+ 768 01df 43617053 		.ascii	"CapSense_IsBusy\000"
+ 768      656E7365 
+ 768      5F497342 
+ 768      75737900 
+ 769              	.LASF18:
+ 770 01ef 43617053 		.ascii	"CapSense_Start\000"
+ 770      656E7365 
+ 770      5F537461 
+ 770      727400
+ 771              	.LASF9:
+ 772 01fe 666C6F61 		.ascii	"float\000"
+ 772      7400
+ 773              	.LASF15:
+ 774 0204 74707265 		.ascii	"tpress\000"
+ 774      737300
+ 775              	.LASF28:
+ 776 020b 55415254 		.ascii	"UART_UartPutString\000"
+ 776      5F556172 
+ 776      74507574 
+ 776      53747269 
+ 776      6E6700
+ 777              	.LASF14:
+ 778 021e 73697A65 		.ascii	"sizetype\000"
+ 778      74797065 
+ 778      00
+ 779              	.LASF20:
+ 780 0227 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
+ 780      656E7365 
+ 780      5F536361 
+ 780      6E456E61 
+ 780      626C6564 
+ 781              	.LASF16:
+ 782 0243 62707265 		.ascii	"bpress\000"
+ 782      737300
+ 783              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
